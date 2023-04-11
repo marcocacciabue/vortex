@@ -26,6 +26,45 @@ library("usethis")
 library("devtools")
 library("roxygen2")
 
+
+### vamos a crear el archivo de descripcion
+
+### TODO Nahuel y Melina crearse un ORCID y agregarlo aca y decidir que direccion de mail usaran
+options(
+  usethis.description = list(    "Authors@R" = c(utils::person(
+    "Marco", "Cacciabue",
+    email = "marcocacciabue@yahoo.com",
+    role = c("aut", "cre"),
+    comment = c(ORCID = "http://orcid.org/0000-0002-1429-4252")
+  ),
+  utils::person(
+    "Melina", "Obregon",
+    email = "meliobre06@gmail.com",
+    role = c("aut"),
+    comment = c(ORCID = "http://orcid.org/0000-0002-1429-4252")
+  ),
+  utils::person(
+    "Nahuel", "Fenoglio",
+    email = "pequefenoglio99@gmail.com",
+    role = c("aut"),
+    comment = c(ORCID = "http://orcid.org/0000-0002-1429-4252")
+  )))
+  )
+
+
+
+
+
+usethis::use_description(fields=list(
+  Title="voRtex",
+  Description="A set of functions for processing VCF files in the context of datamining from illumina data."))
+
+
+### esto algo extra que les tengo que explicar
+# Manually add   biocViews:       before the imports in the description file
+# this allows R to download bioconductors packages see ()
+
+
 ### estas librerias NO las cargamos las tenemos que agregar a la lista de dependencias
 ### usando un comando particular de usethis
 # library("VariantAnnotation")
@@ -33,32 +72,64 @@ library("roxygen2")
 # library("regexcite")
 # library("Biostrings")
 
+usethis::use_package("VariantAnnotation")
+usethis::use_package("IRanges")
+usethis::use_testthat()
 
+
+usethis::use_import_from("VariantAnnotation","readVcf")
 #use_git() Debemos cargar USE_GIT??
 ### se puede usar git en Rstudio. Sin embargo yo prefiero usar el github desktop
 
 
 
-use_r("lector")
+### vamos a saltear la creacion de la funcion de lector. Vamos a arrancar con object control
+
+
+# use_r("lector")
+
+### creamos archivo en blanco y luego copiamos y pegamos el codigo de la funcion.
+use_r("objectControl")
+
+
+### creamos test correspondiente
+usethis::use_test("objectControl")
+
+
+### cargamos todo lo que tenemos hasta ahora
 load_all()
 
-#Prueba de funcionamiento de Lector.runs:
-lector.runs("vortex/datos_crudos2/SraRunInfo_completa_12_12_22.csv",
-            folder = "trabajo_6_3_2023",
-            output.file = "run",chunklength = 50)
+### testeamos
+devtools::test()
 
-#Control 1
-check()
+### lo mismo para la funcion "Position"
+use_r("Position")
+
+### copiamos funcion manualmente.
+
+### para poder testear correctamente esta funcion necesitamos
+### que el paquete incluya al menos un archivo de vcf.
+### para eso lo guardamos en una carpeta especial inst/extdata
+
+
+
+### creamos test correspondiente
+
+usethis::use_test("Position")
+
+### cargamos todo lo que tenemos hasta ahora
+load_all()
+
+### testeamos
+devtools::test()
 
 #Licencia
 use_mit_license()
 
 #Dumentacion
-document()
+devtools::document()
 
-#Prueba de carga de la funcion
-help("lector.runs")
+#Control 1
+devtools::check()
 
-#Control 2
-#Comienza a fallar...Al momento de controlar la funcion, no la encuentra...
-check()
+
