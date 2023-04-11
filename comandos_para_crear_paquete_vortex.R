@@ -74,6 +74,7 @@ usethis::use_description(fields=list(
 
 usethis::use_package("VariantAnnotation")
 usethis::use_package("IRanges")
+
 usethis::use_testthat()
 
 
@@ -126,7 +127,7 @@ devtools::test()
 #Licencia
 use_mit_license()
 
-#Dumentacion
+#Domentacion
 devtools::document()
 
 #Control 1
