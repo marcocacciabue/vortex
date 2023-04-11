@@ -75,6 +75,7 @@ usethis::use_description(fields=list(
 usethis::use_package("VariantAnnotation")
 usethis::use_package("IRanges")
 usethis::use_testthat()
+usethis::use_package("assertthat")
 
 
 usethis::use_import_from("VariantAnnotation","readVcf")
@@ -132,4 +133,13 @@ devtools::document()
 #Control 1
 devtools::check()
 
+#Creamos funcion VCFToDataFrame
+use_r("VCFToDataFrame")
 
+#Testeamos la funcion
+usethis::use_test("VCFToDataFrame")
+
+load_all()
+devtools::install()
+
+devtools::test_coverage()
