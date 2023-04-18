@@ -1,7 +1,6 @@
 
 
 test_that("ObjectControl works fine", {
-  testthat::expect_error()
     expect_error(objectControl())
     object<-NULL
     expect_error(objectControl(object))

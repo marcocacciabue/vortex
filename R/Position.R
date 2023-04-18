@@ -14,6 +14,7 @@
 #' Position(vcf_data)
 Position<-function(vcf_data){
   objectControl(vcf_data)
-  IRanges::ranges(vcf_data)@start #ranges es una funcion de variantAnotations que lee los rangos
-}
+  positions<-IRanges::ranges(vcf_data)@start #ranges es una funcion de variantAnotations que lee los rangos
+  return(positions)
+  }
 
