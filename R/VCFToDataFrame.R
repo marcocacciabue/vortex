@@ -1,15 +1,16 @@
 #' VCFToDataFrame
 #' Returns a data frame with the Positions, DP and AF extracted from a file.vcf
-#' @param file.vcf
+#' @param vcf_data collapsedVCF object. Loaded with the VariantAnnotation::readVcf().
 #'
-#' @return Data Frame
+#' @return Data.frame()
 #' @export
 #'
 #' @examples
 #' file<-system.file("extdata", "variant_file.vcf", package = "vortex", mustWork = TRUE)
-#' VCFToDataFrame (file )
-VCFToDataFrame<-function(file.vcf){
-  vcf_data <- VariantAnnotation::readVcf(file.vcf)
+#' vcf_data <- VariantAnnotation::readVcf(file)
+#' VCFToDataFrame(vcf_data)
+#'
+VCFToDataFrame<-function(vcf_data){
   objectControl(vcf_data)
   DataFrame<-data.frame(Position=Position(vcf_data),
                         DP=VariantAnnotation::info(vcf_data)$DP,
