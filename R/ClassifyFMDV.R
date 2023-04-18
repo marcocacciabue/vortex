@@ -11,9 +11,11 @@
 #'
 #' @param inputFile string path relative to the working directory of the input file. Must be in fasta format.
 #' @param outputFile string path relative to the working directory of the output file. Default = "results.csv"
+#' @param write_result Logical. If True writes result as a .csv file. If false returns a data.frame.
 #' @inheritParams QualityControl
 #'
-#' @return a comma-delimited file
+#'
+#' @return a comma-delimited file or a data.frame
 #' @export
 #'
 #' @examples
@@ -28,7 +30,8 @@ ClassifyInfinity<-function(inputFile,
                            model,
                            QC_value=0.6,
                            Length_value=0.5,
-                           N_value=2){
+                           N_value=2,
+                           write_result=FALSE){
 
   sequence<-ape::read.FASTA(inputFile,type = "DNA")
 
@@ -49,6 +52,10 @@ ClassifyInfinity<-function(inputFile,
 
   PredictedData <- Quality_filter(PredictedData)
 
-  utils::write.csv2(PredictedData,outputFile)
+  if(write_result){
+    utils::write.csv2(PredictedData,outputFile)
+  }else{
+    return(PredictedData)
+  }
 
 }
