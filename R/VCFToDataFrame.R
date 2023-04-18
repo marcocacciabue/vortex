@@ -1,6 +1,6 @@
 #' VCFToDataFrame
 #' Returns a data frame with the Positions, DP and AF extracted from a file.vcf
-#' @param vcf_data collapsedVCF object. Loaded with the VariantAnnotation::readVcf().
+#' @param vcf_data collapsedVCF object. Loaded with the [VariantAnnotation::readVcf()].
 #'
 #' @return Data.frame()
 #' @export

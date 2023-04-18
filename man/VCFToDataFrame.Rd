@@ -8,7 +8,7 @@ Returns a data frame with the Positions, DP and AF extracted from a file.vcf}
 VCFToDataFrame(vcf_data)
 }
 \arguments{
-\item{vcf_data}{collapsedVCF object. Loaded with the VariantAnnotation::readVcf().}
+\item{vcf_data}{collapsedVCF object. Loaded with the \code{\link[VariantAnnotation:readVcf-methods]{VariantAnnotation::readVcf()}}.}
 }
 \value{
 Data.frame()

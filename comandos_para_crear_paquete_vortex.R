@@ -134,6 +134,8 @@ devtools::document()
 #Control 1
 devtools::check()
 
+devtools::install()
+
 #Creamos funcion VCFToDataFrame
 use_r("VCFToDataFrame")
 
@@ -142,6 +144,9 @@ use_r("VCFToDataFrame")
 usethis::use_test("VCFToDataFrame")
 
 load_all()
+
+use_r("DataFrameBinder")
+
 devtools::install()
 
 devtools::test_coverage()
