@@ -151,3 +151,5 @@ devtools::install()
 
 devtools::test_coverage()
 
+usethis::use_test("DataFrameBinder")
+
