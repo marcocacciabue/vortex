@@ -145,11 +145,25 @@ usethis::use_test("VCFToDataFrame")
 
 load_all()
 
+#Creamos la funcion DataFrameBinder
 use_r("DataFrameBinder")
 
 devtools::install()
 
 devtools::test_coverage()
 
+#Testemos la funcion DataFrameBinder
 usethis::use_test("DataFrameBinder")
+
+#Creamos la funcion name_from_string
+use_r("name_from_string")
+
+#Testeamos la funcion name_from_string
+usethis::use_test("name_from_string")
+
+#Creamos la funcion update_fasta_header
+use_r("update_fasta_header")
+
+
+check()
 
