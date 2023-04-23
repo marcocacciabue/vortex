@@ -17,13 +17,15 @@ A \code{\link[=data.frame]{data.frame()}}
 DataFrameBinder
 }
 \examples{
-file<-system.file("extdata", "variant_file.vcf", package = "vortex", mustWork = TRUE)
-file2<-system.file("extdata", "variant_file_2.vcf", package = "vortex", mustWork = TRUE)
-vcf_list<-list(file,
-               file2)
-listavcf_salida<-list()
-for (i in 1:length(vcf_list)){
-  listavcf_salida[[i]]<- VariantAnnotation::readVcf(vcf_list[[i]])
+file <- system.file("extdata", "variant_file.vcf", package = "vortex", mustWork = TRUE)
+file2 <- system.file("extdata", "variant_file_2.vcf", package = "vortex", mustWork = TRUE)
+vcf_list <- list(
+  file,
+  file2
+)
+listavcf_salida <- list()
+for (i in 1:length(vcf_list)) {
+  listavcf_salida[[i]] <- VariantAnnotation::readVcf(vcf_list[[i]])
 }
 DataFrameBinder(listavcf_salida)
 

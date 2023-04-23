@@ -74,6 +74,7 @@ usethis::use_description(fields=list(
 
 usethis::use_package("VariantAnnotation")
 usethis::use_package("IRanges")
+usethis::use_package("Biostrings")
 
 usethis::use_testthat()
 usethis::use_package("assertthat")
@@ -164,6 +165,8 @@ usethis::use_test("name_from_string")
 #Creamos la funcion update_fasta_header
 use_r("update_fasta_header")
 
+
+usethis::use_test("update_fasta_header")
 
 check()
 

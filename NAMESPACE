@@ -3,4 +3,6 @@
 export(DataFrameBinder)
 export(Position)
 export(VCFToDataFrame)
+export(name_from_string)
+export(update_fasta_header)
 importFrom(VariantAnnotation,readVcf)
