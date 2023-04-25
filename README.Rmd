@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 app_name <- "voRtex"
 ```
 
-# **`r app_name `** <img src='man/figures/hex.png' style="float:right; height:200px;" /> 
+# **`r app_name `** <img src='man/Figures/hex.PNG' style="float:right; height:200px;" /> 
 
 
 ## **`r app_name `** is an R package
