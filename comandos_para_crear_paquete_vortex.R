@@ -173,3 +173,25 @@ install.packages("rmarkdown")
 install.packages("knitr")
 library("rmarkdown")
 library("knitr")
+install.packages("hexSticker")
+library("hexSticker")
+stic<-hexSticker::sticker("man/figures/logo.jpg",package = "INFINITy")
+plot(stic)
+
+
+sticker("man/figures/logo.jpg",
+        package="INFINITy",
+        p_size=28,
+        s_x=1,
+        s_y=0.9,
+        s_width=0.6,
+        s_height=0.6,
+        h_fill="#f7f7f7",
+        h_color="#ee65cd",
+        p_color="black",
+        url="https://github.com/marcocacciabue/infinity",
+        u_color="black",
+        p_y=1.7,
+        u_size=8,
+        filename="man/figures/hex.png",
+        dpi= 800)
