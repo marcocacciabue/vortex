@@ -169,4 +169,7 @@ use_r("update_fasta_header")
 usethis::use_test("update_fasta_header")
 
 check()
-
+install.packages("rmarkdown")
+install.packages("knitr")
+library("rmarkdown")
+library("knitr")
