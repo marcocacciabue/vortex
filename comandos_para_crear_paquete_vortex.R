@@ -74,6 +74,7 @@ usethis::use_description(fields=list(
 
 usethis::use_package("VariantAnnotation")
 usethis::use_package("IRanges")
+usethis::use_package("Biostrings")
 
 usethis::use_testthat()
 usethis::use_package("assertthat")
@@ -145,9 +146,57 @@ usethis::use_test("VCFToDataFrame")
 
 load_all()
 
+#Creamos la funcion DataFrameBinder
 use_r("DataFrameBinder")
 
 devtools::install()
 
 devtools::test_coverage()
 
+#Testemos la funcion DataFrameBinder
+usethis::use_test("DataFrameBinder")
+
+#Creamos la funcion name_from_string
+use_r("name_from_string")
+
+#Testeamos la funcion name_from_string
+usethis::use_test("name_from_string")
+
+#Creamos la funcion update_fasta_header
+use_r("update_fasta_header")
+
+
+usethis::use_test("update_fasta_header")
+
+check()
+install.packages("rmarkdown")
+install.packages("knitr")
+library("rmarkdown")
+library("knitr")
+install.packages("hexSticker")
+library("hexSticker")
+stic<-hexSticker::sticker("man/figures/logo.jpg",package = "INFINITy")
+plot(stic)
+
+
+sticker("man/figures/logo.jpg",
+        package="INFINITy",
+        p_size=28,
+        s_x=1,
+        s_y=0.9,
+        s_width=0.6,
+        s_height=0.6,
+        h_fill="#f7f7f7",
+        h_color="#ee65cd",
+        p_color="black",
+        url="https://github.com/marcocacciabue/infinity",
+        u_color="black",
+        p_y=1.7,
+        u_size=8,
+        filename="man/figures/hex.png",
+        dpi= 800)
+
+use_r("NreadFilter")
+usethis::use_test("NreadFilter")
+devtools::test()
+check()

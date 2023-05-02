@@ -19,6 +19,7 @@ Imports:
     ape,
     assertthat,
     DT,
+    Biostrings,
     IRanges,
     kmer,
     ranger,
