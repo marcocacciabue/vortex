@@ -195,3 +195,8 @@ sticker("man/figures/logo.jpg",
         u_size=8,
         filename="man/figures/hex.png",
         dpi= 800)
+
+use_r("NreadFilter")
+usethis::use_test("NreadFilter")
+devtools::test()
+check()
