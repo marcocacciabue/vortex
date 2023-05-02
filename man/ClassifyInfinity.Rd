@@ -10,7 +10,8 @@ ClassifyInfinity(
   model,
   QC_value = 0.6,
   Length_value = 0.5,
-  N_value = 2
+  N_value = 2,
+  write_result = FALSE
 )
 }
 \arguments{
@@ -25,9 +26,11 @@ ClassifyInfinity(
 \item{Length_value}{numeric value from 0 to 1. Proportion of difference to the expected sequence length. (default = 0.5)}
 
 \item{N_value}{numeric value from 0 to 100. Percentage of acceptable ambiguous bases. (default = 2)}
+
+\item{write_result}{Logical. If True writes result as a .csv file. If false returns a data.frame.}
 }
 \value{
-a comma-delimited file
+a comma-delimited file or a data.frame
 }
 \description{
 Wrapper function that performs all the recommended step. This includes
