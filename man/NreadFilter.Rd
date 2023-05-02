@@ -26,7 +26,9 @@ reads a dataframe created from a bed file and filters it according to the
 number of reads.
 }
 \examples{
-FilePath <- system.file("extdata", "SRR12664421_full_coverage.bed", package = "vortex", mustWork = TRUE)
-OGDataFrame <- read.table(FilePath, col.names = c("reference","startpos","endpos","nreads"))
+FilePath <- system.file("extdata", "SRR12664421_full_coverage.bed",
+                         package = "vortex", mustWork = TRUE)
+OGDataFrame <- read.table(FilePath,
+                          col.names = c("reference","startpos","endpos","nreads"))
 salida <- NreadFilter(OGDataFrame,5000)
 }
