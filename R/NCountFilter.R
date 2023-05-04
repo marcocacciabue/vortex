@@ -19,7 +19,7 @@
 #' NCountFilter(DNASequence)
 #'
 NCountFilter<-function(dna_seq,filter=1000){
-  Ncount<-vcountPattern("N",dna_seq)
+  Ncount<-Biostrings::vcountPattern("N",dna_seq)
   Ncount_filter<-Ncount<filter
   dna_seq_filterd<-dna_seq[Ncount_filter]
   if(length(dna_seq_filterd)==0){

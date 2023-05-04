@@ -2,9 +2,9 @@
 
 export(ClassifyInfinity)
 export(DataFrameBinder)
-export(NCountFilter)
 export(Kcounter)
 export(ModelControl)
+export(NCountFilter)
 export(NreadFilter)
 export(Position)
 export(PredictionCaller)
