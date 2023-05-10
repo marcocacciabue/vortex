@@ -26,6 +26,9 @@ library("usethis")
 library("devtools")
 library("roxygen2")
 
+#LIBRERIAS PARA LOS GRAFICOS
+library(ggplot2)
+library(RColorBrewer)
 
 ### vamos a crear el archivo de descripcion
 
@@ -206,3 +209,14 @@ usethis::use_test("NCountFilter")
 devtools::test()
 load_all()
 check()
+
+#Paleta de colores
+color <- brewer.pal(8, "Spectral")
+
+#Creamos la funcion compute_coverage
+use_r("compute_coverage")
+usethis::use_test("compute_coverage")
+
+#Creamos la funcion ggplot_heatmap
+use_r("ggplot_heatmap")
+
