@@ -23,7 +23,7 @@ NCountFilter<-function(dna_seq,filter=1000){
   Ncount_filter<-Ncount<filter
   dna_seq_filterd<-dna_seq[Ncount_filter]
   if(length(dna_seq_filterd)==0){
-    return("No sequence passed the filter")
+    stop("No sequence passed the filter")
   } else {
     return(dna_seq_filterd)
   }
