@@ -22,8 +22,9 @@ compute_coverage
 returns data containing the average position and coverage
 }
 \examples{
-data <- read.table("Resultados/run1/coverage/SRR13776172_full_coverage.bed",
-         col.names = c("reference", "startpos", "endpos", "coverage"))
+ FilePath <- system.file("extdata", "SRR12664421_full_coverage.bed",
+                         package = "vortex", mustWork = TRUE)
+data <- read.table(FilePath, col.names = c("reference", "startpos", "endpos", "coverage"))
 data_processed<-compute_coverage(data, 50,TRUE)
 data_processed
 }
