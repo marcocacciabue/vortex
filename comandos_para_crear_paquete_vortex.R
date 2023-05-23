@@ -179,15 +179,17 @@ stic<-hexSticker::sticker("man/figures/VoRtex.PNG",package = "VoRtex")
 plot(stic)
 
 
-stic2<-sticker("man/figures/VoRtex.PNG",
-        package="vortex",
+stic2<-sticker("man/figures/vORTEX.jpeg",
+        package="voRtex",
+        p_size = 60,
+        p_fontface="italic",
         s_x=0.984,
         s_y=0.98,
         s_width=1.3,
-        s_height=0,
+        s_height=-2,
         h_fill="#f7f7f7",
         h_color="black",
-        p_y=5,
+        p_y=1,
         filename="man/figures/hex.png",
         white_around_sticker = TRUE,
         dpi= 800)
