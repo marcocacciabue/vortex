@@ -23,7 +23,7 @@ compute_coverage <- function(inputdata,
   }
 
   starts <-
-    seq(1, length(inputdata$reference) - windowsize, by = windowsize)
+    seq(1, max(inputdata$endpos) - windowsize, by = windowsize)
   n <- length(starts)
   chunkCOVERAGEs <- numeric(n)
   for (i in 1:n) {

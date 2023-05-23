@@ -7,7 +7,7 @@ data <- read.table(FilePath, col.names = c("reference", "startpos", "endpos", "c
 test_that("output format control", {
   output <- compute_coverage(data, windowsize = 50, logarize = TRUE)
 
-  expect_is(output, "data.frame")
+  expect_s3_class(output, "data.frame")
 
   expect_identical(colnames(output), c("pos", "Coverage"))
 })
