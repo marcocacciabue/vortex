@@ -32,10 +32,12 @@ ggplot_heatmap
 create a custom heatmap plot using ggplot2.
 }
 \examples{
-data <- read.table("Resultados/run1/coverage/SRR13776172_full_coverage.bed",
-        col.names = c("reference", "startpos", "endpos", "coverage"))
-data_processed<-compute_coverage(data, 50, TRUE)
 
+ FilePath <- system.file("extdata", "SRR12664421_full_coverage.bed",
+                         package = "vortex", mustWork = TRUE)
+data <- read.table(FilePath, col.names = c("reference", "startpos", "endpos", "coverage"))
+data_processed<-compute_coverage(data, 50, TRUE)
+color  <- c("#D53E4F","#F46D43","#FDAE61","#FEE08B","#E6F598","#ABDDA4","#66C2A5","#3288BD")
 ggplot_heatmap(inputdata=data_processed,
               color_pal = color)
 }
