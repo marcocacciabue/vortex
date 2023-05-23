@@ -222,3 +222,4 @@ usethis::use_test("compute_coverage")
 #Creamos la funcion ggplot_heatmap
 use_r("ggplot_heatmap")
 
+devtools::install()
