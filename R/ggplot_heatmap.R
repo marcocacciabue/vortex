@@ -11,10 +11,12 @@
 #' @export
 #'
 #' @examples
-#' data <- read.table("Resultados/run1/coverage/SRR13776172_full_coverage.bed",
-#'         col.names = c("reference", "startpos", "endpos", "coverage"))
-#' data_processed<-compute_coverage(data, 50, TRUE)
 #'
+#'  FilePath <- system.file("extdata", "SRR12664421_full_coverage.bed",
+#'                          package = "vortex", mustWork = TRUE)
+#' data <- read.table(FilePath, col.names = c("reference", "startpos", "endpos", "coverage"))
+#' data_processed<-compute_coverage(data, 50, TRUE)
+#' color  <- c("#D53E4F","#F46D43","#FDAE61","#FEE08B","#E6F598","#ABDDA4","#66C2A5","#3288BD")
 #' ggplot_heatmap(inputdata=data_processed,
 #'               color_pal = color)
 
@@ -25,27 +27,27 @@ ggplot_heatmap<-function(inputdata,
                          high_limit=5){
 
 
-  p1 <- ggplot(inputdata, aes(y = 1, x = pos, fill = Coverage)) +
-    geom_raster() +
-    scale_fill_gradientn(
+  p1 <- ggplot2::ggplot(inputdata, ggplot2::aes(y = 1, x = pos, fill = Coverage)) +
+    ggplot2::geom_raster() +
+    ggplot2::scale_fill_gradientn(
       colours = c(color_pal[1], color_pal[5], color_pal[8]),
       limits = c(low_limit,high_limit)
     ) +
-    theme_minimal(base_size = 13) +
-    ylab(name) +
-    theme(
-      axis.text.x = element_blank(),
-      axis.text.y = element_blank(),
-      axis.ticks = element_blank(),
-      axis.title.x = element_blank()
+    ggplot2::theme_minimal(base_size = 13) +
+    ggplot2::ylab(name) +
+    ggplot2::theme(
+      axis.text.x = ggplot2::element_blank(),
+      axis.text.y = ggplot2::element_blank(),
+      axis.ticks = ggplot2::element_blank(),
+      axis.title.x = ggplot2::element_blank()
     ) +
-    coord_cartesian(xlim = c(1, 8500)) +
-    theme(
-      panel.grid.major = element_blank(),
-      panel.grid.minor = element_blank()
+    ggplot2::coord_cartesian(xlim = c(1, 8500)) +
+    ggplot2::theme(
+      panel.grid.major = ggplot2::element_blank(),
+      panel.grid.minor = ggplot2::element_blank()
     )+
-    theme(panel.border = element_rect(color = "black", fill = NA, size = 1.5),
-          plot.background = element_rect(fill = "white"))
+    ggplot2::theme(panel.border = ggplot2::element_rect(color = "black", fill = NA, size = 1.5),
+          plot.background = ggplot2::element_rect(fill = "white"))
 
   return(p1)
 }

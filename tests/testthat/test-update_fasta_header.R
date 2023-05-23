@@ -2,7 +2,7 @@
 
 file <- system.file("extdata", "SRR12664421_masked.fasta", package = "vortex", mustWork = TRUE)
 DNA_stringset <- Biostrings::readDNAStringSet(file)
-header <- name_from_string(file,verbose = TRUE)
+header <- name_from_string(file,verbose = FALSE)
 updated_fasta<- update_fasta_header(
   DNA_stringset,
   header
