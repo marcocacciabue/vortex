@@ -75,6 +75,8 @@ usethis::use_description(fields=list(
 usethis::use_package("VariantAnnotation")
 usethis::use_package("IRanges")
 usethis::use_package("Biostrings")
+usethis::use_package("ggplot2", type = "Suggests")
+usethis::use_package("RColorBrewer", type = "Suggests")
 
 usethis::use_testthat()
 usethis::use_package("assertthat")
@@ -209,3 +211,14 @@ usethis::use_test("NCountFilter")
 devtools::test()
 load_all()
 check()
+
+#Paleta de colores
+color <- brewer.pal(8, "Spectral")
+
+#Creamos la funcion compute_coverage
+use_r("compute_coverage")
+usethis::use_test("compute_coverage")
+
+#Creamos la funcion ggplot_heatmap
+use_r("ggplot_heatmap")
+
