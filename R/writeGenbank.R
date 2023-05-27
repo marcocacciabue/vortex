@@ -156,23 +156,44 @@ get_polyprotein<-function(x,
 }
 
 
-create_gb_list<-function(fasta_file){
-  x<-list()
-  x$name<- names(fasta_file)
-  x$start<- find_ORF(fasta_file)
-  x$end<- find_STOP(fasta_file,
-                    x$start)
-  x$size<-BiocGenerics::width(fasta_file)
+#' create_gb_list
+#'
+#' Creates a simple list containing all the necessary information for the [writeGenbank()] function.
+#'
+#' @param x DNAstringset with the relevant sequence
+#'
+#' @return A list
+#' @export
+#'
+#' @examples
+#' file <- system.file("extdata", "SRR12664421_masked.fasta", package = "vortex", mustWork = TRUE)
+#' create_gb_list(file)
+create_gb_list<-function(x){
+  out<-list()
+  out$name<- names(x)
+  out$start<- find_ORF(x)
+  out$end<- find_STOP(x,
+                      out$start)
+  out$size<-BiocGenerics::width(x)
 
-  x$date<-format(Sys.time(), "%d-%b-%Y")
+  out$date<-format(Sys.time(), "%d-%b-%Y")
 
-  x$sequence<-  fasta_file[[1]]
-  x$sequenceAA<-  get_polyprotein(fasta_file[[1]],
-                                  x$start,
-                                  x$end)
-  return(x)
+  out$sequence<-  x[[1]]
+  out$sequenceAA<-  get_polyprotein(x[[1]],
+                                    out$start,
+                                    out$end)
+  return(out)
 }
 
+#' writeFeatureTable
+#' Additional function to create Feature table. Useful for using table2asn.exe software, in case [writeGenbank()] doesn´t work.
+#' @param x
+#' @param file
+#'
+#' @return
+#' @export
+#'
+#' @examples
 writeFeatureTable <- function(x, file){
   op <- options(useFancyQuotes = FALSE)
   on.exit(options(op))
@@ -189,7 +210,7 @@ writeFeatureTable <- function(x, file){
   invisible()
 }
 
-writeSequence <- function (x, file = "out.gbk") {
+writeSequence <- function (x, file = "out.gb") {
   if (length(seq <- x$sequence) > 0L) {
     lineno <- seq(from = 1, to = length(seq), by = 60)
     lines <- seq_along(lineno)
@@ -210,7 +231,7 @@ writeSequence <- function (x, file = "out.gbk") {
 
   invisible()
 }
-writeSequenceAA <- function (x, file = "out.gbk") {
+writeSequenceAA <- function (x, file = "out.gb") {
   if (length(seq <- x$sequenceAA) > 0L) {
     seq<-paste0("/translation=\"",XVector::toString(seq),"\"")
     lineno <- seq(from = 1, to = nchar(seq), by = 60)
