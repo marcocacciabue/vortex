@@ -223,3 +223,8 @@ usethis::use_test("compute_coverage")
 use_r("ggplot_heatmap")
 
 devtools::install()
+
+
+
+
+use_r("writeGenbank")
