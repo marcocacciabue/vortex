@@ -28,7 +28,7 @@ NreadFilter <- function(OGDataFrame, RFilter=1000){
 
   OGDataFrameWithWidth <- cbind(OGDataFrame,Width)
 
-  FilteredDataFrame <- subset(OGDataFrameWithWidth, nreads > RFilter)
+  FilteredDataFrame <- subset(OGDataFrameWithWidth, OGDataFrameWithWidth$nreads > RFilter)
 
   FilteredPercent <- sum(FilteredDataFrame[,"Width"])*100/sum(OGDataFrameWithWidth[,"Width"])
   mi_lista <- list(FilteredDataFrame, FilteredPercent)

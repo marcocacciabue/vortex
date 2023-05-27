@@ -10,7 +10,8 @@
 #'
 #' @examples
 #' file <- system.file("extdata", "SRR12664421_masked.fasta", package = "vortex", mustWork = TRUE)
-#' x<-create_gb_list(file)
+#' sequence_stringset <- Biostrings::readDNAStringSet(file)
+#' x<-create_gb_list(sequence_stringset)
 #' file_out<-paste0(x$name,".gb")
 #' \dontrun{
 #' writeGenBankSimple(x,file_out)
@@ -61,15 +62,16 @@ writeGenBank <- function(x,
 #'
 #' @examples
 #' file <- system.file("extdata", "SRR12664421_masked.fasta", package = "vortex", mustWork = TRUE)
-#' find_ORF(file)
+#' sequence_stringset <- Biostrings::readDNAStringSet(file)
+#' find_ORF(sequence_stringset)
 #'
 find_ORF<-function(x,
                    start_codon="ATG"){
   # TODO add check for fasta format
-  Codon_positions <- start(Biostrings::vmatchPattern("ATG", x))[[1]]
+  Codon_positions <- Biostrings::start(Biostrings::vmatchPattern("ATG", x))[[1]]
 
   # TODO add loop for in case it those not detect a initiation codon
-  Codon_positions<-Codon_positions[(Codon_positions>1030)&(Codon_positions<1100)]
+  Codon_positions<-Codon_positions[(Codon_positions>1050)&(Codon_positions<1100)]
   if(length(Codon_positions)!=1){
     stop(paste0("Stopping because there were ",length(Codon_positions)," codons detected (allowed only 1)"))
   }
@@ -84,14 +86,14 @@ find_ORF<-function(x,
 #' @param x DNAstringset with the relevant sequence
 #' @param start_codon_position numeric. Output from [find_ORF()].
 #'
-#' @return
+#' @return the position of the relevant codon
 #' @export
 #'
 #' @examples
 #' file <- system.file("extdata", "SRR12664421_masked.fasta", package = "vortex", mustWork = TRUE)
-#'
-#' find_STOP(x,
-#'           start_codon_position=voRtex::find_ORF(file))
+#' sequence_stringset <- Biostrings::readDNAStringSet(file)
+#' find_STOP(sequence_stringset,
+#'           start_codon_position=find_ORF(sequence_stringset))
 find_STOP<-function(x,
                     start_codon_position){
   # TODO add check for fasta format
@@ -101,7 +103,7 @@ find_STOP<-function(x,
   for(i in 1:length(stop_codons)){
 
     # search for pattern in sequence
-    STOP_positions <- start(Biostrings::vmatchPattern(stop_codons[i], x))[[1]]
+    STOP_positions <- Biostrings::start(Biostrings::vmatchPattern(stop_codons[i], x))[[1]]
     # only keep those hits that are AFTER the informed firt codon
     STOP_positions<-STOP_positions[(STOP_positions>start_codon_position)]
 
@@ -136,7 +138,8 @@ find_STOP<-function(x,
 #'
 #' @examples
 #' file <- system.file("extdata", "SRR12664421_masked.fasta", package = "vortex", mustWork = TRUE)
-#' get_polyprotein(file)
+#' sequence_stringset <- Biostrings::readDNAStringSet(file)
+#' get_polyprotein(sequence_stringset)
 #'
 
 get_polyprotein<-function(x,
@@ -148,9 +151,9 @@ get_polyprotein<-function(x,
   }
   if(is.null(stop_codon)){
     stop_codon<-find_STOP(x,
-                          start_codon = start_codon)
+                          start_codon_position = start_codon)
   }
-  sequence<-subseq(x,start_codon,stop_codon)
+  sequence<-Biostrings::subseq(x,start_codon,stop_codon)
   Biostrings::translate(sequence)
 
 }
@@ -158,7 +161,7 @@ get_polyprotein<-function(x,
 
 #' create_gb_list
 #'
-#' Creates a simple list containing all the necessary information for the [writeGenbank()] function.
+#' Creates a simple list containing all the necessary information for the [writeGenBank()] function.
 #'
 #' @param x DNAstringset with the relevant sequence
 #'
@@ -167,7 +170,8 @@ get_polyprotein<-function(x,
 #'
 #' @examples
 #' file <- system.file("extdata", "SRR12664421_masked.fasta", package = "vortex", mustWork = TRUE)
-#' create_gb_list(file)
+#' sequence_stringset <- Biostrings::readDNAStringSet(file)
+#' create_gb_list(sequence_stringset)
 create_gb_list<-function(x){
   out<-list()
   out$name<- names(x)
@@ -186,15 +190,21 @@ create_gb_list<-function(x){
 }
 
 #' writeFeatureTable
-#' Additional function to create Feature table. Useful for using table2asn.exe software, in case [writeGenbank()] doesn´t work.
-#' @param x
-#' @param file
+#' Additional function to create Feature table. Useful for using table2asn.exe software, in case [writeGenBank()] doesn´t work.
+#' @param x a list created with [create_gb_list()].
+#' @param file string. Name of the file to save. Default = out.tbl.
 #'
-#' @return
+#' @return writes a feature table file
 #' @export
 #'
 #' @examples
-writeFeatureTable <- function(x, file){
+#' file <- system.file("extdata", "SRR12664421_masked.fasta", package = "vortex", mustWork = TRUE)
+#' sequence_stringset <- Biostrings::readDNAStringSet(file)
+#'
+#' \dontrun{
+#' writeFeatureTable(create_gb_list(sequence_stringset))
+#' }
+writeFeatureTable <- function(x, file="out.tbl"){
   op <- options(useFancyQuotes = FALSE)
   on.exit(options(op))
 
@@ -210,14 +220,31 @@ writeFeatureTable <- function(x, file){
   invisible()
 }
 
+
+#' writeSequence
+#' write fasta sequence in genbank format.
+#'
+#' @param x a list created with [create_gb_list()].
+#' @param file string. Name of the file to save. Default = out.gb.
+#'
+#' @return writes the sequence section of the genbank file
+#' @export
+#'
+#' @examples
+#' file <- system.file("extdata", "SRR12664421_masked.fasta", package = "vortex", mustWork = TRUE)
+#' sequence_stringset <- Biostrings::readDNAStringSet(file)
+#'
+#' \dontrun{
+#' writeSequence(create_gb_list(sequence_stringset))
+#' }
 writeSequence <- function (x, file = "out.gb") {
   if (length(seq <- x$sequence) > 0L) {
-    lineno <- seq(from = 1, to = length(seq), by = 60)
+    lineno <- seq(from = 1, to = nchar(seq), by = 60)
     lines <- seq_along(lineno)
     n_lines <- length(lines)
     s <- character(n_lines)
     for (i in lines) {
-      seqw <- ifelse(i <  n_lines, i*60, length(seq))
+      seqw <- ifelse(i <  n_lines, i*60, nchar(seq))
       seqs <- XVector::toString(XVector::subseq(seq, 1 + (i - 1)*60, seqw))
       s[i] <- gsub("[[:punct:]]", "", seqs)
     }
@@ -231,6 +258,20 @@ writeSequence <- function (x, file = "out.gb") {
 
   invisible()
 }
+#' writeSequenceAA
+#' write AA sequence in the genbank format, under the translation slot.
+#' @param x a list created with [create_gb_list()].
+#' @param file string. Name of the file to save. Default = out.gb.
+#'
+#' @return writes the translation section of the genbank file
+#' @export
+#'
+#' @examples
+#' file <- system.file("extdata", "SRR12664421_masked.fasta", package = "vortex", mustWork = TRUE)
+#' sequence_stringset <- Biostrings::readDNAStringSet(file)
+#'  \dontrun{
+#' writeSequenceAA(create_gb_list(sequence_stringset))
+#' }
 writeSequenceAA <- function (x, file = "out.gb") {
   if (length(seq <- x$sequenceAA) > 0L) {
     seq<-paste0("/translation=\"",XVector::toString(seq),"\"")
