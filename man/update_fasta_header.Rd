@@ -21,7 +21,7 @@ updates the Fasta header by a user-given string.
 }
 \examples{
 
-file <- system.file("extdata", "SRR12664421_masked.fasta", package = "vortex", mustWork = TRUE)
+file <- system.file("extdata", "SRR12664421_masked.fasta", package = "voRtex", mustWork = TRUE)
 DNA_stringset <- Biostrings::readDNAStringSet(file)
 header <- name_from_string(file)
 update_fasta_header(

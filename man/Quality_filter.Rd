@@ -17,9 +17,11 @@ Change Clade definition to "LowQuality" in samples with at least one FLAG from \
 }
 \examples{
 
-file_path<-system.file("extdata","KY404934.1.fasta",package="vortex")
+file_path<-system.file("extdata","KY404934.1.fasta",package="voRtex")
 
 sequence<-ape::read.FASTA(file_path,type = "DNA")
+
+calling_null<-ranger::predictions(FMDV_model)
 
 NormalizedData <- Kcounter(SequenceData=sequence,model=FMDV_model)
 

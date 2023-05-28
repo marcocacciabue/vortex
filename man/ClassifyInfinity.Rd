@@ -44,7 +44,7 @@ Wrapper function that performs all the recommended step. This includes
 \examples{
 
 \dontrun{
-file_path<-system.file("extdata","KY404934.1.fasta",package="vortex")
+file_path<-system.file("extdata","KY404934.1.fasta",package="voRtex")
 
 ClassifyInfinity(inputFile=file_path,model=FMDV_model)
 }

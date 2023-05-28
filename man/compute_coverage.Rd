@@ -23,7 +23,7 @@ returns data containing the average position and coverage
 }
 \examples{
  FilePath <- system.file("extdata", "SRR12664421_full_coverage.bed",
-                         package = "vortex", mustWork = TRUE)
+                         package = "voRtex", mustWork = TRUE)
 data <- read.table(FilePath, col.names = c("reference", "startpos", "endpos", "coverage"))
 data_processed<-compute_coverage(data, 50,TRUE)
 data_processed

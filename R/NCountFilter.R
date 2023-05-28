@@ -11,7 +11,7 @@
 #' @examples
 #' FilePath <- system.file("extdata",
 #'                         "renamed_all.fasta",
-#'                         package = "vortex",
+#'                         package = "voRtex",
 #'                         mustWork = TRUE)
 #'
 #' DNASequence <- Biostrings::readDNAStringSet(FilePath)

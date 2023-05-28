@@ -20,7 +20,7 @@ find_ORF
 Finds the ATG initiation codon in FMDV genomes.
 }
 \examples{
-file <- system.file("extdata", "SRR12664421_masked.fasta", package = "vortex", mustWork = TRUE)
+file <- system.file("extdata", "SRR12664421_masked.fasta", package = "voRtex", mustWork = TRUE)
 sequence_stringset <- Biostrings::readDNAStringSet(file)
 find_ORF(sequence_stringset)
 

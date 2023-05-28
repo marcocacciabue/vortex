@@ -23,7 +23,7 @@ Creates a bare bones gb format file. It is intended to be used for the SNPeff da
 step. Do NOT use it to upload to ncbi.
 }
 \examples{
-file <- system.file("extdata", "SRR12664421_masked.fasta", package = "vortex", mustWork = TRUE)
+file <- system.file("extdata", "SRR12664421_masked.fasta", package = "voRtex", mustWork = TRUE)
 sequence_stringset <- Biostrings::readDNAStringSet(file)
 x<-create_gb_list(sequence_stringset)
 file_out<-paste0(x$name,".gb")

@@ -19,14 +19,14 @@
 #' * `N_QC` a logical value. If `TRUE` the sequence passed the quality filter for undefined bases. Run [QualityControl()] to fill this column
 #'
 #' @export
-#' @importFrom ranger predictions
 #' @examples
 #'
 #'
 #'
-#' file_path<-system.file("extdata","KY404934.1.fasta",package="vortex")
+#' file_path<-system.file("extdata","KY404934.1.fasta",package="voRtex")
 #'
 #' sequence<-ape::read.FASTA(file_path,type = "DNA")
+#' calling_null<-ranger::predictions(FMDV_model)
 #'
 #' NormalizedData <- Kcounter(SequenceData=sequence,model=FMDV_model)
 #'
@@ -36,6 +36,7 @@
 PredictionCaller<-function(NormalizedData,
                            model,
                            QC_unknown=0.2){
+  # TODO add check for ranger package because it is now as a suggest
 
    if (is.null(NormalizedData) | missing(NormalizedData)){
     stop("'NormalizedData' must be indicated")
@@ -98,9 +99,11 @@ PredictionCaller<-function(NormalizedData,
 #'
 #' @examples
 #'
-#' file_path<-system.file("extdata","KY404934.1.fasta",package="vortex")
+#' file_path<-system.file("extdata","KY404934.1.fasta",package="voRtex")
 #'
 #' sequence<-ape::read.FASTA(file_path,type = "DNA")
+#'
+#' calling_null<-ranger::predictions(FMDV_model)
 #'
 #' NormalizedData <- Kcounter(SequenceData=sequence,model=FMDV_model)
 #'
@@ -169,9 +172,11 @@ QualityControl<-function(data,
 #'
 #' @examples
 #'
-#' file_path<-system.file("extdata","KY404934.1.fasta",package="vortex")
+#' file_path<-system.file("extdata","KY404934.1.fasta",package="voRtex")
 #'
 #' sequence<-ape::read.FASTA(file_path,type = "DNA")
+#'
+#' calling_null<-ranger::predictions(FMDV_model)
 #'
 #' NormalizedData <- Kcounter(SequenceData=sequence,model=FMDV_model)
 #'

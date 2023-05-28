@@ -21,7 +21,7 @@ A very simple wrapper around \link[Biostrings:translate]{Biostrings::translate}.
 If no initiatio and/or stop codons positions are provided it uses \code{\link[=find_ORF]{find_ORF()}} and \code{\link[=find_STOP]{find_STOP()}}.
 }
 \examples{
-file <- system.file("extdata", "SRR12664421_masked.fasta", package = "vortex", mustWork = TRUE)
+file <- system.file("extdata", "SRR12664421_masked.fasta", package = "voRtex", mustWork = TRUE)
 sequence_stringset <- Biostrings::readDNAStringSet(file)
 get_polyprotein(sequence_stringset)
 

@@ -9,7 +9,7 @@
 #' @export
 #'
 #' @examples
-#' file <- system.file("extdata", "SRR12664421_masked.fasta", package = "vortex", mustWork = TRUE)
+#' file <- system.file("extdata", "SRR12664421_masked.fasta", package = "voRtex", mustWork = TRUE)
 #' sequence_stringset <- Biostrings::readDNAStringSet(file)
 #' x<-create_gb_list(sequence_stringset)
 #' file_out<-paste0(x$name,".gb")
@@ -61,7 +61,7 @@ writeGenBank <- function(x,
 #' @export
 #'
 #' @examples
-#' file <- system.file("extdata", "SRR12664421_masked.fasta", package = "vortex", mustWork = TRUE)
+#' file <- system.file("extdata", "SRR12664421_masked.fasta", package = "voRtex", mustWork = TRUE)
 #' sequence_stringset <- Biostrings::readDNAStringSet(file)
 #' find_ORF(sequence_stringset)
 #'
@@ -90,7 +90,7 @@ find_ORF<-function(x,
 #' @export
 #'
 #' @examples
-#' file <- system.file("extdata", "SRR12664421_masked.fasta", package = "vortex", mustWork = TRUE)
+#' file <- system.file("extdata", "SRR12664421_masked.fasta", package = "voRtex", mustWork = TRUE)
 #' sequence_stringset <- Biostrings::readDNAStringSet(file)
 #' find_STOP(sequence_stringset,
 #'           start_codon_position=find_ORF(sequence_stringset))
@@ -137,7 +137,7 @@ find_STOP<-function(x,
 #' @export
 #'
 #' @examples
-#' file <- system.file("extdata", "SRR12664421_masked.fasta", package = "vortex", mustWork = TRUE)
+#' file <- system.file("extdata", "SRR12664421_masked.fasta", package = "voRtex", mustWork = TRUE)
 #' sequence_stringset <- Biostrings::readDNAStringSet(file)
 #' get_polyprotein(sequence_stringset)
 #'
@@ -169,7 +169,7 @@ get_polyprotein<-function(x,
 #' @export
 #'
 #' @examples
-#' file <- system.file("extdata", "SRR12664421_masked.fasta", package = "vortex", mustWork = TRUE)
+#' file <- system.file("extdata", "SRR12664421_masked.fasta", package = "voRtex", mustWork = TRUE)
 #' sequence_stringset <- Biostrings::readDNAStringSet(file)
 #' create_gb_list(sequence_stringset)
 create_gb_list<-function(x){
@@ -198,7 +198,7 @@ create_gb_list<-function(x){
 #' @export
 #'
 #' @examples
-#' file <- system.file("extdata", "SRR12664421_masked.fasta", package = "vortex", mustWork = TRUE)
+#' file <- system.file("extdata", "SRR12664421_masked.fasta", package = "voRtex", mustWork = TRUE)
 #' sequence_stringset <- Biostrings::readDNAStringSet(file)
 #'
 #' \dontrun{
@@ -231,7 +231,7 @@ writeFeatureTable <- function(x, file="out.tbl"){
 #' @export
 #'
 #' @examples
-#' file <- system.file("extdata", "SRR12664421_masked.fasta", package = "vortex", mustWork = TRUE)
+#' file <- system.file("extdata", "SRR12664421_masked.fasta", package = "voRtex", mustWork = TRUE)
 #' sequence_stringset <- Biostrings::readDNAStringSet(file)
 #'
 #' \dontrun{
@@ -267,7 +267,7 @@ writeSequence <- function (x, file = "out.gb") {
 #' @export
 #'
 #' @examples
-#' file <- system.file("extdata", "SRR12664421_masked.fasta", package = "vortex", mustWork = TRUE)
+#' file <- system.file("extdata", "SRR12664421_masked.fasta", package = "voRtex", mustWork = TRUE)
 #' sequence_stringset <- Biostrings::readDNAStringSet(file)
 #'  \dontrun{
 #' writeSequenceAA(create_gb_list(sequence_stringset))

@@ -22,7 +22,7 @@ Finds the first stop codon in FMDV genomes. It uses start_codon_position
 to determine the correct translation frame.
 }
 \examples{
-file <- system.file("extdata", "SRR12664421_masked.fasta", package = "vortex", mustWork = TRUE)
+file <- system.file("extdata", "SRR12664421_masked.fasta", package = "voRtex", mustWork = TRUE)
 sequence_stringset <- Biostrings::readDNAStringSet(file)
 find_STOP(sequence_stringset,
           start_codon_position=find_ORF(sequence_stringset))

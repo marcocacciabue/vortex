@@ -11,13 +11,13 @@
 # create_package("C:/Users/HP/OneDrive/Documentos/GitHub/vortex")
 
 ### vamos a una carpeta SUPERIOR a donde este vortex
-devtools::create('./vortex')
+devtools::create('./voRtex')
 
 ### NO suele ser necesario pero por las dudas nos aseguramos que el proyecto activo
 ### sea el correcto
-usethis::proj_activate('./vortex')
+usethis::proj_activate('./voRtex')
 
-setwd("./vortex")
+setwd("./voRtex")
 #LIBRERIAS A UTILIZAR:
 ### Solo cargamos estas tres librerias para el "desarrollo" del paquete
 ### Agrego roxygen2 para la documentacion.
@@ -77,12 +77,39 @@ usethis::use_package("IRanges")
 usethis::use_package("Biostrings")
 usethis::use_package("ggplot2", type = "Suggests")
 usethis::use_package("RColorBrewer", type = "Suggests")
-
 usethis::use_testthat()
 usethis::use_package("assertthat")
 
 
 usethis::use_import_from("VariantAnnotation","readVcf")
+
+
+
+
+
+
+
+
+#ignoramos en el armado del paquete la carpeta que incluye los models
+use_build_ignore("inst/myapp/")
+
+#cargamos modelo
+FMDV_model <- readRDS("inst/myapp/models/FMDV_model.rds")
+
+#lo comprimimos para que este disponible en el paquete
+usethis::use_data(FMDV_model,overwrite = TRUE,compress = "bzip2")
+
+
+usethis::use_package("ranger", type = "Suggests")
+
+usethis::use_package("DT", type = "Suggests")
+
+
+usethis::use_package("ape", type = "Suggests")
+# usethis::use_package("usethis")
+
+usethis::use_package("kmer", type = "Suggests")
+
 #use_git() Debemos cargar USE_GIT??
 ### se puede usar git en Rstudio. Sin embargo yo prefiero usar el github desktop
 

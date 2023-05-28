@@ -29,7 +29,7 @@ name_from_string
 extracts the relevant part of a string delimited by first_token and last_token
 }
 \examples{
-file <- system.file("extdata", "SRR12664421_masked.fasta", package = "vortex", mustWork = TRUE)
+file <- system.file("extdata", "SRR12664421_masked.fasta", package = "voRtex", mustWork = TRUE)
 name_from_string(file,
   first_token = "extdata/",
   last_token = "_masked.fasta"

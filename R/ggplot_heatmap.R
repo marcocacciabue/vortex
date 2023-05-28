@@ -13,7 +13,7 @@
 #' @examples
 #'
 #'  FilePath <- system.file("extdata", "SRR12664421_full_coverage.bed",
-#'                          package = "vortex", mustWork = TRUE)
+#'                          package = "voRtex", mustWork = TRUE)
 #' data <- read.table(FilePath, col.names = c("reference", "startpos", "endpos", "coverage"))
 #' data_processed<-compute_coverage(data, 50, TRUE)
 #' color  <- c("#D53E4F","#F46D43","#FDAE61","#FEE08B","#E6F598","#ABDDA4","#66C2A5","#3288BD")

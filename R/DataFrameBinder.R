@@ -7,8 +7,8 @@
 #' @export
 #'
 #' @examples
-#' file <- system.file("extdata", "variant_file.vcf", package = "vortex", mustWork = TRUE)
-#' file2 <- system.file("extdata", "variant_file_2.vcf", package = "vortex", mustWork = TRUE)
+#' file <- system.file("extdata", "variant_file.vcf", package = "voRtex", mustWork = TRUE)
+#' file2 <- system.file("extdata", "variant_file_2.vcf", package = "voRtex", mustWork = TRUE)
 #' vcf_list <- list(
 #'   file,
 #'   file2

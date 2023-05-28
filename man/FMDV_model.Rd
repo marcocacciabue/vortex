@@ -30,6 +30,6 @@ The model includes a list with 18 elements (modified from a Object of class \cod
 FMDV_model
 }
 \description{
-This a classification model (created with the ranger package) to use with the vortex package
+This a classification model (created with the ranger package) to use with the voRtex package
 }
 \keyword{datasets}

@@ -1,4 +1,4 @@
-file <- system.file("extdata", "variant_file.vcf", package = "vortex", mustWork = TRUE)
+file <- system.file("extdata", "variant_file.vcf", package = "voRtex", mustWork = TRUE)
 vcf_data <- VariantAnnotation::readVcf(file)
 VCFToDataFrame_test <- VCFToDataFrame(vcf_data)
 Expected_DataFrame <- data.frame(

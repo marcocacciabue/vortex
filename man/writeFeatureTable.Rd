@@ -20,7 +20,7 @@ writeFeatureTable
 Additional function to create Feature table. Useful for using table2asn.exe software, in case \code{\link[=writeGenBank]{writeGenBank()}} doesn´t work.
 }
 \examples{
-file <- system.file("extdata", "SRR12664421_masked.fasta", package = "vortex", mustWork = TRUE)
+file <- system.file("extdata", "SRR12664421_masked.fasta", package = "voRtex", mustWork = TRUE)
 sequence_stringset <- Biostrings::readDNAStringSet(file)
 
 \dontrun{

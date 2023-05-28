@@ -19,7 +19,7 @@ Counts k-mers of the size required by the input model and normalize the data reg
 }
 \examples{
 
-file_path<-system.file("extdata","KY404934.1.fasta",package="vortex")
+file_path<-system.file("extdata","KY404934.1.fasta",package="voRtex")
 
 sequence<-ape::read.FASTA(file_path,type = "DNA")
 

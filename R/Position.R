@@ -9,7 +9,7 @@
 #' @export
 #'
 #' @examples
-#' file <- system.file("extdata", "variant_file.vcf", package = "vortex", mustWork = TRUE)
+#' file <- system.file("extdata", "variant_file.vcf", package = "voRtex", mustWork = TRUE)
 #' vcf_data <- VariantAnnotation::readVcf(file)
 #' Position(vcf_data)
 Position <- function(vcf_data) {

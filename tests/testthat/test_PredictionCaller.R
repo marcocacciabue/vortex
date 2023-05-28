@@ -1,8 +1,8 @@
 # library("ranger")
-library("vortex")
+library("voRtex")
 
 
-file_path<-system.file("extdata","KY404934.1.fasta",package="vortex")
+file_path<-system.file("extdata","KY404934.1.fasta",package="voRtex")
 
 sequence<-ape::read.FASTA(file_path,type = "DNA")
 

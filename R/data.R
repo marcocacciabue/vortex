@@ -1,6 +1,6 @@
 #' Random forest classification model based on full length FMDV sequence
 #'
-#' This a classification model (created with the ranger package) to use with the vortex package
+#' This a classification model (created with the ranger package) to use with the voRtex package
 #'
 #'
 #' @format The model includes a list with 18 elements (modified from a Object of class `ranger`):

@@ -1,6 +1,6 @@
 FilePath <- system.file("extdata",
                         "SRR12664421_full_coverage.bed",
-                        package = "vortex",
+                        package = "voRtex",
                         mustWork = TRUE)
 
 OGDataFrame <- read.table(FilePath,
