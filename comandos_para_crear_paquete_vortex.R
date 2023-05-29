@@ -237,7 +237,7 @@ use_r("NCountFilter")
 usethis::use_test("NCountFilter")
 devtools::test()
 load_all()
-check()
+devtools::check()
 
 #Paleta de colores
 color <- brewer.pal(8, "Spectral")
