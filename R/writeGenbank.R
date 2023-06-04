@@ -14,7 +14,7 @@
 #' x<-create_gb_list(sequence_stringset)
 #' file_out<-paste0(x$name,".gb")
 #' \dontrun{
-#' writeGenBankSimple(x,file_out)
+#' writeGenBank(x,file_out)
 #' }
 writeGenBank <- function(x,
                          file="out.gb"){
@@ -239,6 +239,7 @@ writeFeatureTable <- function(x, file="out.tbl"){
 #' }
 writeSequence <- function (x, file = "out.gb") {
   if (length(seq <- x$sequence) > 0L) {
+    seq<-XVector::toString(seq)
     lineno <- seq(from = 1, to = nchar(seq), by = 60)
     lines <- seq_along(lineno)
     n_lines <- length(lines)
