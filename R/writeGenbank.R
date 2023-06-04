@@ -71,7 +71,8 @@ find_ORF<-function(x,
   Codon_positions <- Biostrings::start(Biostrings::vmatchPattern("ATG", x))[[1]]
 
   # TODO add loop for in case it those not detect a initiation codon
-  Codon_positions<-Codon_positions[(Codon_positions>1050)&(Codon_positions<1100)]
+  Codon_positions<-Codon_positions[(Codon_positions>1000)&(Codon_positions<1100)]
+  Codon_positions<-max(Codon_positions)
   if(length(Codon_positions)!=1){
     stop(paste0("Stopping because there were ",length(Codon_positions)," codons detected (allowed only 1)"))
   }
