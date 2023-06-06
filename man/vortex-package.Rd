@@ -6,6 +6,8 @@
 \alias{voRtex-package}
 \title{voRtex: voRtex}
 \description{
+\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
+
 A set of functions for processing VCF files in the context of datamining from illumina data.
 }
 \author{

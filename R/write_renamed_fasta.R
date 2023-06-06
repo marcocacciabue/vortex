@@ -5,7 +5,7 @@
 #' @param output_dir string. Where to save the new fasta.
 #' @inheritParams name_from_string
 #'
-#' @return
+#' @return writes a fasta file with the updated header.
 #' @export
 #'
 #' @examples

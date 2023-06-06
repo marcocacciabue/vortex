@@ -155,7 +155,7 @@ get_polyprotein<-function(x,
                           start_codon_position = start_codon)
   }
   sequence<-Biostrings::subseq(x,start_codon,stop_codon)
-  Biostrings::translate(sequence)
+  Biostrings::translate(sequence, if.fuzzy.codon="X")
 
 }
 

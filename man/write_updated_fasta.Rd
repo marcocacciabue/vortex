@@ -16,6 +16,9 @@ write_updated_fasta(file, output_dir, first_token, last_token)
 
 \item{last_token}{String.last part to cut}
 }
+\value{
+writes a fasta file with the updated header.
+}
 \description{
 write_updated_fasta
 wrraper around \code{\link[=update_fasta_header]{update_fasta_header()}} reads a fasta file from path, updates the header and writes the new file
