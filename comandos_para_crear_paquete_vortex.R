@@ -208,7 +208,7 @@ stic<-hexSticker::sticker("man/figures/VoRtex.PNG",package = "VoRtex")
 plot(stic)
 
 
-stic2<-sticker("man/figures/vORTEX.jpeg",
+stic2<-sticker("man/figures/logo.png",
         package="voRtex",
         p_size = 60,
         p_fontface="italic",
@@ -216,7 +216,7 @@ stic2<-sticker("man/figures/vORTEX.jpeg",
         s_y=0.98,
         s_width=1.3,
         s_height=-2,
-        h_fill="#f7f7f7",
+        h_fill="#4F94CD",
         h_color="black",
         spotlight = TRUE,
         p_y=1,
