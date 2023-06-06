@@ -1,4 +1,4 @@
-Marco Cacciabue, Melina ObregC3n, Axel N. Fenoglio
+Marco Cacciabue, Melina Obregón, Axel N. Fenoglio
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
@@ -9,11 +9,11 @@ Marco Cacciabue, Melina ObregC3n, Axel N. Fenoglio
 voRtex is a package created with the purpose to help in the data
 analysis of large groups of foot and mouth desease rna sequences.
 
-This package contains a collection of functions designed to manage and
-analyze sample data in an efficient way.
-It manages VCF files, bed files, fasta files, DNAStringSet and else.
+this package contains a collection of functions designed to manage and
+analyze sample data in an efficient way. It manages VCF files, bed
+files, fasta files, DNAStringSet and else.
 
-## Examples
+## examples
 
 VCFToDataFrame.R creates a data frame off a vcf file, containing allel
 position, allel frecuency and depth coverage
@@ -32,7 +32,9 @@ VCFToDataFrame <- function(vcf_data) {
   VCFToDataFrame(vcf_data)
 ```
 
-With compute_coverage.R we can create a dataframe containing the average position and coverage of a mouth and foot desease sequence, using a .bed file, giving the function a window size of choosing
+With compute_coverage.R we can create a dataframe containing the average
+position and coverage of a mouth and foot desease sequence, using a .bed
+file, giving the function a window size of choosing
 
 ``` r
 compute_coverage <- function(inputdata,
@@ -72,10 +74,10 @@ data <- read.table(FilePath, col.names = c("reference", "startpos", "endpos", "c
 
 data_processed<-compute_coverage(data, 50,TRUE)
 
-
 ```
 
-Then with ggplot_heatmap.R we can create a heatmap based on the data frame created with compute_coverage
+Then with ggplot_heatmap.R we can create a heatmap based on the data
+frame created with compute_coverage
 
 ``` r
 ggplot_heatmap<-function(inputdata,
@@ -119,9 +121,8 @@ color  <- c("#D53E4F","#F46D43","#FDAE61","#FEE08B","#E6F598","#ABDDA4","#66C2A5
 
 ggplot_heatmap(inputdata=data_processed,
                color_pal = color)
-
 ```
+
 Resulting in this beautiful heat map
 
-
-
+![SRR12664421_Heatmap](Rplot.png)
