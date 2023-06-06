@@ -225,6 +225,7 @@ stic2<-sticker("man/figures/vORTEX.jpeg",
 
 plot(stic2)
 
+
 help("sticker")
 
 
