@@ -1,4 +1,4 @@
-file <- system.file("extdata", "ERR180978.calls.norm.indels.vcf_annotated.vcf", package = "vortex", mustWork = TRUE)
+file <- system.file("extdata", "ERR180978.calls.norm.indels.vcf_annotated.vcf", package = "voRtex", mustWork = TRUE)
 vcf<- VariantAnnotation::readVcf(file)
 Annotation<-extract_element_from_ANN(vcf_data=vcf, index=2)
 Annotation_Impact<-extract_element_from_ANN(vcf_data=vcf,index=3)

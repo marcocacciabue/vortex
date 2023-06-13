@@ -1,4 +1,3 @@
-
 #' extract_element_from_ANN
 #'
 #' @param vcf_data

@@ -3,7 +3,7 @@
 \name{VCFToDataFrame}
 \alias{VCFToDataFrame}
 \title{VCFToDataFrame
-Returns a data frame with the Positions, DP and AF extracted from a file.vcf}
+Returns a data frame with the Positions, DP, AF and ANN extracted from a file.vcf}
 \usage{
 VCFToDataFrame(vcf_data)
 }
@@ -15,7 +15,7 @@ Data.frame()
 }
 \description{
 VCFToDataFrame
-Returns a data frame with the Positions, DP and AF extracted from a file.vcf
+Returns a data frame with the Positions, DP, AF and ANN extracted from a file.vcf
 }
 \examples{
 file <- system.file("extdata", "variant_file.vcf", package = "voRtex", mustWork = TRUE)

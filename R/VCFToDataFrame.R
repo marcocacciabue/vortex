@@ -12,7 +12,7 @@
 #'
 VCFToDataFrame <- function(vcf_data) {
   objectControl(vcf_data)
-  if ("ANN" %in% colnames(VariantAnnotation::info(vcf))){
+  if ("ANN" %in% colnames(VariantAnnotation::info(vcf_data))){
   DataFrame <- data.frame(
     Position = Position(vcf_data),
     DP = VariantAnnotation::info(vcf_data)$DP,
