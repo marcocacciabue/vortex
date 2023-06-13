@@ -7,6 +7,8 @@
 extract_element_from_ANN(vcf_data, index)
 }
 \arguments{
+\item{vcf_data}{collapsedVCF object. Loaded with the \code{\link[VariantAnnotation:readVcf-methods]{VariantAnnotation::readVcf()}}.}
+
 \item{index}{A numeric that indicates the index of the element of ANN to extract (tested for 2 and 3).}
 }
 \value{
@@ -16,7 +18,8 @@ A character vector
 extract_element_from_ANN
 }
 \examples{
-file <- system.file("extdata", "ERR180978.calls.norm.indels.vcf_annotated.vcf", package = "vortex", mustWork = TRUE)
+file <- system.file("extdata", "annotated.vcf", package = "voRtex", mustWork = TRUE)
+
 vcf<- VariantAnnotation::readVcf(file)
 
 Annotation<-extract_element_from_ANN(vcf_data=vcf, index=2)

@@ -1,4 +1,5 @@
-file <- system.file("extdata", "ERR180978.calls.norm.indels.vcf_annotated.vcf", package = "voRtex", mustWork = TRUE)
+library(voRtex)
+file <- system.file("extdata", "annotated.vcf", package = "voRtex", mustWork = TRUE)
 vcf<- VariantAnnotation::readVcf(file)
 Annotation<-extract_element_from_ANN(vcf_data=vcf, index=2)
 Annotation_Impact<-extract_element_from_ANN(vcf_data=vcf,index=3)
@@ -10,3 +11,4 @@ test_that("Checks the elements from Annotation", {
   expect_equal(Annotation[1:3],expect_annotation)
   expect_equal(Annotation_Impact[1:3],expect_annotation_impact)
 })
+
