@@ -1,5 +1,5 @@
 #' VCFToDataFrame
-#' Returns a data frame with the Positions, DP and AF extracted from a file.vcf
+#' Returns a data frame with the Positions, DP, AF and ANN extracted from a file.vcf
 #' @param vcf_data collapsedVCF object. Loaded with the [VariantAnnotation::readVcf()].
 #'
 #' @return Data.frame()
@@ -12,11 +12,19 @@
 #'
 VCFToDataFrame <- function(vcf_data) {
   objectControl(vcf_data)
+  if ("ANN" %in% colnames(VariantAnnotation::info(vcf))){
   DataFrame <- data.frame(
     Position = Position(vcf_data),
     DP = VariantAnnotation::info(vcf_data)$DP,
-    AF = VariantAnnotation::info(vcf_data)$AF
-  )
+    AF = VariantAnnotation::info(vcf_data)$AF,
+    Annotation=voRtex::extract_element_from_ANN(vcf_data,2),
+    Annotation_Impact=voRtex::extract_element_from_ANN(vcf_data,3)
+  )} else{
+    DataFrame <- data.frame(
+      Position = Position(vcf_data),
+      DP = VariantAnnotation::info(vcf_data)$DP,
+      AF = VariantAnnotation::info(vcf_data)$AF)
+  }
   return(DataFrame)
   # to do agregar funcion fastareader
   # Sample=fasta_header_from_path(file.vcf,
