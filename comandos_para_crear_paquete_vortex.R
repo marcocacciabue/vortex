@@ -258,3 +258,5 @@ use_r("extract_element_from_ANN")
 usethis::use_test("extract_element_from_ANN")
 
 use_r("writeGenbank")
+
+
