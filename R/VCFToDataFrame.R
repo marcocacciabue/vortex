@@ -30,4 +30,5 @@ VCFToDataFrame <- function(vcf_data) {
   # Sample=fasta_header_from_path(file.vcf,
   # first_token="vcf_files/",
   # last_token = ".calls.norm.indels.vcf")
+  # Agregar columna con nombre de la muestra a partir de un argumento
 }
