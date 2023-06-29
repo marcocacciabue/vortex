@@ -210,18 +210,18 @@ plot(stic)
 
 stic2<-sticker("man/figures/logo.png",
         package="voRtex",
-        p_size = 60,
+        p_size = 80,
         p_fontface="italic",
-        s_x=0.984,
+        s_x=0.988,
         s_y=0.98,
-        s_width=1.3,
-        s_height=-2,
+        s_width=0.8,
+        s_height=5,
         h_fill="#4F94CD",
         h_color="black",
         spotlight = TRUE,
         p_y=1,
         filename="man/figures/hex.png",
-        white_around_sticker = TRUE,
+        white_around_sticker = FALSE,
         dpi= 800)
 
 plot(stic2)
