@@ -2,7 +2,7 @@ Marco Cacciabue, Melina Obregón, Axel N. Fenoglio
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# **voRtex** <img src='man/Figures/hex.PNG' style="float:right; height:200px;"/>
+# **voRtex** <img src='man/Figures/hex2.png' style="float:right; height:200px;"/>
 
 ## **voRtex** is an R package
 
@@ -62,7 +62,10 @@ Rplot
 
 Resulting in this beautiful heat map
 
-![SRR12664421_Heatmap](Rplot.png)
+<figure>
+<img src="Rplot.png" alt="SRR12664421_Heatmap" />
+<figcaption aria-hidden="true">SRR12664421_Heatmap</figcaption>
+</figure>
 
 #### NreadFilter
 
