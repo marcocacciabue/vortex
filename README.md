@@ -63,7 +63,7 @@ Rplot
 Resulting in this beautiful heat map
 
 <figure>
-<img src="Rplot.png" alt="SRR12664421_Heatmap" />
+<img src="man/Figures/Rplot.png" alt="SRR12664421_Heatmap" />
 <figcaption aria-hidden="true">SRR12664421_Heatmap</figcaption>
 </figure>
 
