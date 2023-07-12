@@ -70,15 +70,32 @@ find_ORF<-function(x,
   # TODO add check for fasta format
   Codon_positions <- Biostrings::start(Biostrings::vmatchPattern("ATG", x))[[1]]
 
-  # TODO add loop for in case it those not detect a initiation codon
-  Codon_positions<-Codon_positions[(Codon_positions>1000)&(Codon_positions<1100)]
-  Codon_positions<-max(Codon_positions)
-  if(length(Codon_positions)!=1){
-    stop(paste0("Stopping because there were ",length(Codon_positions)," codons detected (allowed only 1)"))
+  #specific for FMDV to reduce number of possibile viable ORFs
+  Codon_positions <- Codon_positions[(Codon_positions > 900) &
+                                       (Codon_positions < 1200)]
+  #Previus method not always got the correct ORF
+  #Now we calculate the STOP for each START and translate
+  out<-vector()
+  for(i in 1:length(Codon_positions)){
+
+    out[i]<- voRtex::find_STOP(x,Codon_positions[i])
+  }
+  protein<-vector()
+  size<-vector()
+  for(i in 1:length(Codon_positions)){
+    protein<-voRtex::get_polyprotein(x,Codon_positions[i],out[i])
+    size[i]<-protein@ranges@width
+  }
+
+  #Get only the START that produces the largest Protein
+
+  Codon_positions <- Codon_positions[which.max(size)]
+  if (length(Codon_positions) != 1) {
+    stop(paste0("Stopping because there were ", length(Codon_positions),
+                " codons detected (allowed only 1)"))
   }
   return(Codon_positions)
 }
-
 
 
 #' find_STOP
