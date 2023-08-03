@@ -14,7 +14,7 @@ objectControl <- function(object) {
   }
 
   if (is(object)[1] != "CollapsedVCF") {
-    stop("The object is not a CollapsedVCF class!")
+    stop("The object is not a CollapsedVCF!")
   }
   # to do: controlar que el archivo vcf sea de lofreq
 }
