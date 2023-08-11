@@ -8,10 +8,10 @@ Returns a data frame with the Positions, DP, AF and ANN extracted from a file.vc
 VCFToDataFrame(vcf_data)
 }
 \arguments{
-\item{vcf_data}{collapsedVCF object. Loaded with the \code{\link[VariantAnnotation:readVcf-methods]{VariantAnnotation::readVcf()}}.}
+\item{vcf_data}{collapsedVCF object. Loaded with the \link[VariantAnnotation:readVcf-methods]{VariantAnnotation::readVcf}.}
 }
 \value{
-Data.frame()
+\link{Data.frame}
 }
 \description{
 VCFToDataFrame

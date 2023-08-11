@@ -7,7 +7,7 @@
 extract_element_from_ANN(vcf_data, index)
 }
 \arguments{
-\item{vcf_data}{collapsedVCF object. Loaded with the \code{\link[VariantAnnotation:readVcf-methods]{VariantAnnotation::readVcf()}}.}
+\item{vcf_data}{collapsedVCF object. Loaded with the \link[VariantAnnotation:readVcf-methods]{VariantAnnotation::readVcf}.}
 
 \item{index}{A numeric that indicates the index of the element of ANN to extract (tested for 2 and 3).}
 }

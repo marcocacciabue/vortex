@@ -1,0 +1,55 @@
+##fileformat=VCFv4.0
+##FILTER=<ID=PASS,Description="All filters passed">
+##fileDate=20230320
+##source=lofreq call --force-overwrite --call-indels -f /nexus/run17/ref_relative/ERR180978_A.fasta --no-default-filter -r ERR180978:1-512 -o /tmp/lofreq2_call_parallel4et57R/0.vcf.gz /nexus/run17/A_viterbi_sorted_indels.bam 
+##reference=/nexus/run17/ref_relative/ERR180978_A.fasta
+##INFO=<ID=DP,Number=1,Type=Integer,Description="Raw Depth">
+##INFO=<ID=AF,Number=1,Type=Float,Description="Allele Frequency">
+##INFO=<ID=SB,Number=1,Type=Integer,Description="Phred-scaled strand bias at this position">
+##INFO=<ID=DP4,Number=4,Type=Integer,Description="Counts for ref-forward bases, ref-reverse, alt-forward and alt-reverse bases">
+##INFO=<ID=INDEL,Number=0,Type=Flag,Description="Indicates that the variant is an INDEL.">
+##INFO=<ID=CONSVAR,Number=0,Type=Flag,Description="Indicates that the variant is a consensus variant (as opposed to a low frequency variant).">
+##INFO=<ID=HRUN,Number=1,Type=Integer,Description="Homopolymer length to the right of report indel position">
+##FILTER=<ID=min_snvqual_20,Description="Minimum SNV Quality (Phred) 20">
+##FILTER=<ID=min_indelqual_20,Description="Minimum Indel Quality (Phred) 20">
+##FILTER=<ID=min_dp_10,Description="Minimum Coverage 10">
+##FILTER=<ID=sb_fdr,Description="Strand-Bias Multiple Testing Correction: fdr corr. pvalue > 0.001000">
+##FILTER=<ID=min_snvqual_64,Description="Minimum SNV Quality (Phred) 64">
+##FILTER=<ID=min_indelqual_50,Description="Minimum Indel Quality (Phred) 50">
+##contig=<ID=ERR180978>
+##bcftools_normVersion=1.10.2+htslib-1.10.2-3
+##bcftools_normCommand=norm -f /nexus/run17/ref_relative/ERR180978_A.fasta -Ob -o /nexus/run17/ERR180978_A.calls.norm.bcf /nexus/run17/ERR180978_A_variants.vcf.gz; Date=Mon Mar 20 03:46:05 2023
+##FILTER=<ID=SnpGap,Description="SNP within 5 bp of an indel">
+##FILTER=<ID=IndelGap,Description="Indel within 5 bp of an indel">
+##bcftools_filterVersion=1.10.2+htslib-1.10.2-3
+##bcftools_filterCommand=filter -i 'AF>0.01 && QUAL>20 && DP>29' --IndelGap 5 --SnpGap 5 -o /nexus/run17/variants/ERR180978.calls.norm.indels.vcf /nexus/run17/ERR180978_A.calls.norm.bcf; Date=Mon Mar 20 03:46:12 2023
+##SnpEffVersion="5.1d (build 2022-04-19 15:49), by Pablo Cingolani"
+##SnpEffCmd="SnpEff  user 02_raw/variants/ERR180978.calls.norm.indels.vcf "
+##INFO=<ID=ANN,Number=.,Type=String,Description="Functional annotations: 'Allele | Annotation | Annotation_Impact | Gene_Name | Gene_ID | Feature_Type | Feature_ID | Transcript_BioType | Rank | HGVS.c | HGVS.p | cDNA.pos / cDNA.length | CDS.pos / CDS.length | AA.pos / AA.length | Distance | ERRORS / WARNINGS / INFO' ">
+##INFO=<ID=LOF,Number=.,Type=String,Description="Predicted loss of function effects for this variant. Format: 'Gene_Name | Gene_ID | Number_of_transcripts_in_gene | Percent_of_transcripts_affected'">
+##INFO=<ID=NMD,Number=.,Type=String,Description="Predicted nonsense mediated decay effects for this variant. Format: 'Gene_Name | Gene_ID | Number_of_transcripts_in_gene | Percent_of_transcripts_affected'">
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO
+ERR180978	1000	.	A	G	4332.0	PASS	DP=19188;AF=0.020846;SB=0;DP4=13326,5451,284,116;ANN=G|upstream_gene_variant|MODIFIER|Gene_1093_8091|Gene_1093_8091|transcript|unknown|protein_coding||c.-94A>G|||||94|,G|intergenic_region|MODIFIER|CHR_START-Gene_1093_8091|CHR_START-Gene_1093_8091|intergenic_region|CHR_START-Gene_1093_8091|||n.1000A>G||||||
+ERR180978	1080	.	T	C	3314.0	PASS	DP=24830;AF=0.012404;SB=0;DP4=13972,10546,174,134;ANN=C|upstream_gene_variant|MODIFIER|Gene_1093_8091|Gene_1093_8091|transcript|unknown|protein_coding||c.-14T>C|||||14|,C|intergenic_region|MODIFIER|CHR_START-Gene_1093_8091|CHR_START-Gene_1093_8091|intergenic_region|CHR_START-Gene_1093_8091|||n.1080T>C||||||
+ERR180978	1104	.	T	C	49314.0	PASS	DP=26912;AF=0.450171;SB=1;DP4=8461,6327,6897,5218;ANN=C|missense_variant|MODERATE|Gene_1093_8091|Gene_1093_8091|transcript|unknown|protein_coding|1/1|c.11T>C|p.Ile4Thr|11/6999|11/6999|4/2332||
+ERR180978	1172	.	G	A	42817.0	PASS	DP=28498;AF=0.076111;SB=5;DP4=14508,11809,1223,946;ANN=A|missense_variant|MODERATE|Gene_1093_8091|Gene_1093_8091|transcript|unknown|protein_coding|1/1|c.79G>A|p.Gly27Arg|79/6999|79/6999|27/2332||
+ERR180978	1246	.	C	T	49314.0	PASS	DP=29141;AF=0.10233;SB=2;DP4=13128,13024,1516,1466;ANN=T|synonymous_variant|LOW|Gene_1093_8091|Gene_1093_8091|transcript|unknown|protein_coding|1/1|c.153C>T|p.Cys51Cys|153/6999|153/6999|51/2332||
+ERR180978	2329	.	A	G	2200.0	PASS	DP=20902;AF=0.011195;SB=2;DP4=8724,11936,103,131;ANN=G|synonymous_variant|LOW|Gene_1093_8091|Gene_1093_8091|transcript|unknown|protein_coding|1/1|c.1236A>G|p.Val412Val|1236/6999|1236/6999|412/2332||
+ERR180978	2369	.	C	T	36050.0	PASS	DP=22913;AF=0.081613;SB=5;DP4=10318,10720,894,976;ANN=T|missense_variant|MODERATE|Gene_1093_8091|Gene_1093_8091|transcript|unknown|protein_coding|1/1|c.1276C>T|p.Leu426Phe|1276/6999|1276/6999|426/2332||
+ERR180978	2383	.	T	C	2353.0	PASS	DP=23000;AF=0.010957;SB=1;DP4=11295,11439,122,130;ANN=C|synonymous_variant|LOW|Gene_1093_8091|Gene_1093_8091|transcript|unknown|protein_coding|1/1|c.1290T>C|p.Pro430Pro|1290/6999|1290/6999|430/2332||
+ERR180978	2697	.	AC	A	6706.0	PASS	DP=17425;AF=0.033687;SB=3;DP4=7959,9144,282,305;INDEL;HRUN=8;ANN=A|frameshift_variant|HIGH|Gene_1093_8091|Gene_1093_8091|transcript|unknown|protein_coding|1/1|c.1612delC|p.Arg538fs|1612/6999|1612/6999|538/2332||INFO_REALIGN_3_PRIME;LOF=(Gene_1093_8091|Gene_1093_8091|1|1.00)
+ERR180978	2771	.	T	C	49314.0	PASS	DP=18971;AF=0.245796;SB=11;DP4=7092,7210,2384,2279;ANN=C|missense_variant|MODERATE|Gene_1093_8091|Gene_1093_8091|transcript|unknown|protein_coding|1/1|c.1678T>C|p.Cys560Arg|1678/6999|1678/6999|560/2332||
+ERR180978	2772	.	G	A	49314.0	PASS	DP=19102;AF=0.160821;SB=19;DP4=7932,8090,1597,1475;ANN=A|missense_variant|MODERATE|Gene_1093_8091|Gene_1093_8091|transcript|unknown|protein_coding|1/1|c.1679G>A|p.Cys560Tyr|1679/6999|1679/6999|560/2332||
+ERR180978	2781	.	G	A	27053.0	PASS	DP=19079;AF=0.080665;SB=2;DP4=8175,9360,731,808;ANN=A|missense_variant|MODERATE|Gene_1093_8091|Gene_1093_8091|transcript|unknown|protein_coding|1/1|c.1688G>A|p.Gly563Asp|1688/6999|1688/6999|563/2332||
+ERR180978	2798	.	A	G	8545.0	PASS	DP=19400;AF=0.033093;SB=2;DP4=8593,10159,287,355;ANN=G|missense_variant|MODERATE|Gene_1093_8091|Gene_1093_8091|transcript|unknown|protein_coding|1/1|c.1705A>G|p.Thr569Ala|1705/6999|1705/6999|569/2332||
+ERR180978	2840	.	A	G	37253.0	PASS	DP=22212;AF=0.085404;SB=4;DP4=9778,10530,936,961;ANN=G|missense_variant|MODERATE|Gene_1093_8091|Gene_1093_8091|transcript|unknown|protein_coding|1/1|c.1747A>G|p.Met583Val|1747/6999|1747/6999|583/2332||
+ERR180978	2972	.	A	G	49314.0	PASS	DP=13507;AF=0.208484;SB=1;DP4=5024,5664,1333,1483;ANN=G|missense_variant|MODERATE|Gene_1093_8091|Gene_1093_8091|transcript|unknown|protein_coding|1/1|c.1879A>G|p.Ile627Val|1879/6999|1879/6999|627/2332||
+ERR180978	3901	.	T	G	22430.0	PASS	DP=23845;AF=0.053596;SB=0;DP4=11750,10722,664,614;ANN=G|synonymous_variant|LOW|Gene_1093_8091|Gene_1093_8091|transcript|unknown|protein_coding|1/1|c.2808T>G|p.Thr936Thr|2808/6999|2808/6999|936/2332||
+ERR180978	4357	.	A	G	1994.0	PASS	DP=13601;AF=0.013234;SB=3;DP4=6507,6909,92,88;ANN=G|synonymous_variant|LOW|Gene_1093_8091|Gene_1093_8091|transcript|unknown|protein_coding|1/1|c.3264A>G|p.Lys1088Lys|3264/6999|3264/6999|1088/2332||
+ERR180978	5014	.	A	G	2337.0	PASS	DP=19615;AF=0.010808;SB=22;DP4=11270,8128,103,109;ANN=G|synonymous_variant|LOW|Gene_1093_8091|Gene_1093_8091|transcript|unknown|protein_coding|1/1|c.3921A>G|p.Lys1307Lys|3921/6999|3921/6999|1307/2332||
+ERR180978	5452	.	C	T	32611.0	PASS	DP=22592;AF=0.076487;SB=4;DP4=10081,10776,815,913;ANN=T|synonymous_variant|LOW|Gene_1093_8091|Gene_1093_8091|transcript|unknown|protein_coding|1/1|c.4359C>T|p.Gly1453Gly|4359/6999|4359/6999|1453/2332||
+ERR180978	6082	.	C	T	7634.0	PASS	DP=17783;AF=0.031828;SB=11;DP4=10226,6981,315,251;ANN=T|synonymous_variant|LOW|Gene_1093_8091|Gene_1093_8091|transcript|unknown|protein_coding|1/1|c.4989C>T|p.Gly1663Gly|4989/6999|4989/6999|1663/2332||
+ERR180978	6411	.	T	C	8689.0	PASS	DP=19714;AF=0.030232;SB=0;DP4=8654,10459,269,327;ANN=C|missense_variant|MODERATE|Gene_1093_8091|Gene_1093_8091|transcript|unknown|protein_coding|1/1|c.5318T>C|p.Val1773Ala|5318/6999|5318/6999|1773/2332||
+ERR180978	6673	.	T	A	5041.0	PASS	DP=19292;AF=0.021045;SB=3;DP4=9796,9020,219,187;ANN=A|missense_variant|MODERATE|Gene_1093_8091|Gene_1093_8091|transcript|unknown|protein_coding|1/1|c.5580T>A|p.His1860Gln|5580/6999|5580/6999|1860/2332||
+ERR180978	6818	.	A	G	9629.0	PASS	DP=16822;AF=0.036203;SB=8;DP4=7237,8972,253,356;ANN=G|missense_variant|MODERATE|Gene_1093_8091|Gene_1093_8091|transcript|unknown|protein_coding|1/1|c.5725A>G|p.Asn1909Asp|5725/6999|5725/6999|1909/2332||
+ERR180978	7372	.	A	C	49314.0	PASS	DP=20583;AF=0.428023;SB=3;DP4=6343,5315,4744,4066;ANN=C|synonymous_variant|LOW|Gene_1093_8091|Gene_1093_8091|transcript|unknown|protein_coding|1/1|c.6279A>C|p.Ala2093Ala|6279/6999|6279/6999|2093/2332||
