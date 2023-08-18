@@ -8,10 +8,10 @@ DataFrameBinder(vcflist)
 }
 \arguments{
 \item{vcflist}{A list of collapsedVCF objects to combine in a single data.frame using
-\code{\link[=VCFToDataFrame]{VCFToDataFrame()}}}
+\link{VCFToDataFrame}}
 }
 \value{
-A \code{\link[=data.frame]{data.frame()}}
+A \link{data.frame}
 }
 \description{
 DataFrameBinder
