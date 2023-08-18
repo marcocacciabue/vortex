@@ -8,8 +8,6 @@ read.vcf.to.df(file, add_sample = FALSE)
 }
 \arguments{
 \item{file}{A string path to the vcf file to read. Created to reemplace \link{DataFrameBinder}.}
-
-\item{add_sample}{Logical. if true adds path as a sample name in a new column.}
 }
 \value{
 A \link{data.frame} created with \link{VCFToDataFrame}.
