@@ -32,8 +32,7 @@ DataFrameBinder <- function(vcflist) {
 #' read.vcf.to.df
 #'
 #' @param file A string path to the vcf file to read. Created to reemplace [DataFrameBinder].
-#' @param add_sample Logical. if true adds [sample_name] in a new column.
-#' @param sample_name string. Name of sample to add if [add_sample] is TRUE.
+#' @param add_sample Logical. if true adds path as a sample name in a new column.
 #' @return A [data.frame] created with [VCFToDataFrame].
 #' @export
 #'
@@ -42,18 +41,14 @@ DataFrameBinder <- function(vcflist) {
 #' read.vcf.to.df(file)
 #'
 read.vcf.to.df<-function(file,
-                         add_sample=FALSE,
-                         sample_name){
+                         add_sample=FALSE){
   x<-VariantAnnotation::readVcf(file)
 
   out<-voRtex::VCFToDataFrame(x)
-  if(add_sample & missing(sample_name)){
-    stop("add_sample TRUE and sample_name is missing, please provide a name")
-  }
+
   if(add_sample){
 
-
-    out$sample<-sample_name
+    out$sample<-file
   }
   return(out)
 }

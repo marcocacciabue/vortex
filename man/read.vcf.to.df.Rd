@@ -4,14 +4,12 @@
 \alias{read.vcf.to.df}
 \title{read.vcf.to.df}
 \usage{
-read.vcf.to.df(file, add_sample = FALSE, sample_name)
+read.vcf.to.df(file, add_sample = FALSE)
 }
 \arguments{
 \item{file}{A string path to the vcf file to read. Created to reemplace \link{DataFrameBinder}.}
 
-\item{add_sample}{Logical. if true adds \link{sample_name} in a new column.}
-
-\item{sample_name}{string. Name of sample to add if \link{add_sample} is TRUE.}
+\item{add_sample}{Logical. if true adds path as a sample name in a new column.}
 }
 \value{
 A \link{data.frame} created with \link{VCFToDataFrame}.
