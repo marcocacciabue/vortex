@@ -2,7 +2,7 @@
 #' Returns a data frame with the Positions, DP, AF and ANN extracted from a file.vcf
 #' @param vcf_data collapsedVCF object. Loaded with the [VariantAnnotation::readVcf].
 #'
-#' @return [Data.frame]
+#' @return data.frame
 #' @export
 #'
 #' @examples

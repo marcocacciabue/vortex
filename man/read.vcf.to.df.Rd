@@ -4,13 +4,13 @@
 \alias{read.vcf.to.df}
 \title{read.vcf.to.df}
 \usage{
-read.vcf.to.df(file, add_sample = FALSE)
+read.vcf.to.df(file)
 }
 \arguments{
 \item{file}{A string path to the vcf file to read. Created to reemplace \link{DataFrameBinder}.}
 }
 \value{
-A \link{data.frame} created with \link{VCFToDataFrame}.
+A data.frame created with \link{VCFToDataFrame}.
 }
 \description{
 read.vcf.to.df

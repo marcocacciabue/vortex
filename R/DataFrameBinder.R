@@ -3,7 +3,7 @@
 #' @param vcflist A list of collapsedVCF objects to combine in a single data.frame using
 #' [VCFToDataFrame]
 #'
-#' @return A [data.frame]
+#' @return A data.frame
 #' @export
 #'
 #' @examples
@@ -33,15 +33,14 @@ DataFrameBinder <- function(vcflist) {
 #'
 #' @param file A string path to the vcf file to read. Created to reemplace [DataFrameBinder].
 #'
-#' @return A [data.frame] created with [VCFToDataFrame].
+#' @return A data.frame created with [VCFToDataFrame].
 #' @export
 #'
 #' @examples
 #' file <- system.file("extdata", "variant_file.vcf", package = "voRtex", mustWork = TRUE)
 #' read.vcf.to.df(file)
 #'
-read.vcf.to.df<-function(file,
-                         add_sample=FALSE){
+read.vcf.to.df<-function(file){
   x<-VariantAnnotation::readVcf(file)
 
   out<-voRtex::VCFToDataFrame(x)

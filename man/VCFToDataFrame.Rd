@@ -11,7 +11,7 @@ VCFToDataFrame(vcf_data)
 \item{vcf_data}{collapsedVCF object. Loaded with the \link[VariantAnnotation:readVcf-methods]{VariantAnnotation::readVcf}.}
 }
 \value{
-\link{Data.frame}
+data.frame
 }
 \description{
 VCFToDataFrame

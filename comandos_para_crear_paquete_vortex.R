@@ -75,6 +75,11 @@ usethis::use_description(fields=list(
 usethis::use_package("VariantAnnotation")
 usethis::use_package("IRanges")
 usethis::use_package("Biostrings")
+usethis::use_package("BiocGenerics")
+usethis::use_package("XVector")
+
+usethis::use_package("methods")
+
 usethis::use_package("ggplot2", type = "Suggests")
 usethis::use_package("RColorBrewer", type = "Suggests")
 usethis::use_testthat()

@@ -11,7 +11,7 @@ DataFrameBinder(vcflist)
 \link{VCFToDataFrame}}
 }
 \value{
-A \link{data.frame}
+A data.frame
 }
 \description{
 DataFrameBinder
