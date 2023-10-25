@@ -34,12 +34,12 @@ ggplot_heatmap<-function(inputdata,
       limits = c(low_limit,high_limit)
     ) +
     ggplot2::theme_minimal(base_size = 13) +
-    ggplot2::ylab(name) +
+    ggplot2::xlab(name) +
     ggplot2::theme(
       axis.text.x = ggplot2::element_blank(),
       axis.text.y = ggplot2::element_blank(),
       axis.ticks = ggplot2::element_blank(),
-      axis.title.x = ggplot2::element_blank()
+      axis.title.y = ggplot2::element_blank()
     ) +
     ggplot2::coord_cartesian(xlim = c(1, 8500)) +
     ggplot2::theme(
