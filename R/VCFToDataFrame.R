@@ -1,5 +1,5 @@
 #' VCFToDataFrame
-#' Returns a data frame with the Positions, DP, AF and ANN extracted from a file.vcf
+#' Returns a data frame with the Positions, DP, AF, INDEL and ANN extracted from a file.vcf
 #' @param vcf_data collapsedVCF object. Loaded with the [VariantAnnotation::readVcf].
 #'
 #' @return data.frame
@@ -17,6 +17,7 @@ VCFToDataFrame <- function(vcf_data) {
     Position = Position(vcf_data),
     DP = VariantAnnotation::info(vcf_data)$DP,
     AF = VariantAnnotation::info(vcf_data)$AF,
+    INDEL = VariantAnnotation::info(vcf_data)$INDEL,
     Annotation=voRtex::extract_element_from_ANN(vcf_data,2),
     Annotation_Impact=voRtex::extract_element_from_ANN(vcf_data,3)
   )} else{

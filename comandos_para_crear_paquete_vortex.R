@@ -168,7 +168,7 @@ devtools::document()
 
 #Control 1
 devtools::check()
-
+usethis::use_version(which="patch")
 devtools::install()
 
 #Creamos funcion VCFToDataFrame
@@ -269,3 +269,5 @@ usethis::use_test("extract_element_from_ANN")
 use_r("writeGenbank")
 
 use_r("recalibrate_vcf")
+
+
