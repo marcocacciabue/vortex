@@ -32,7 +32,7 @@ DataFrameBinder <- function(vcflist) {
 #' read.vcf.to.df
 #'
 #' @param file A string path to the vcf file to read. Created to reemplace [DataFrameBinder].
-#'
+#' @param sample A string indicating the name of the sample. If not provided filename is used.
 #' @return A data.frame created with [VCFToDataFrame].
 #' @export
 #'
@@ -40,10 +40,15 @@ DataFrameBinder <- function(vcflist) {
 #' file <- system.file("extdata", "variant_file.vcf", package = "voRtex", mustWork = TRUE)
 #' read.vcf.to.df(file)
 #'
-read.vcf.to.df<-function(file){
+read.vcf.to.df<-function(file,sample=NULL){
   x<-VariantAnnotation::readVcf(file)
 
   out<-voRtex::VCFToDataFrame(x)
+  if(is.null(sample)){
   out$sample<-file
+  }else{
+  out$sample<-sample
+
+  }
   return(out)
 }

@@ -4,10 +4,12 @@
 \alias{read.vcf.to.df}
 \title{read.vcf.to.df}
 \usage{
-read.vcf.to.df(file)
+read.vcf.to.df(file, sample = NULL)
 }
 \arguments{
 \item{file}{A string path to the vcf file to read. Created to reemplace \link{DataFrameBinder}.}
+
+\item{sample}{A string indicating the name of the sample. If not provided filename is used.}
 }
 \value{
 A data.frame created with \link{VCFToDataFrame}.
