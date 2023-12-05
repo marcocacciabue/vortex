@@ -1,0 +1,30 @@
+##fileformat=VCFv4.0
+##SnpEffCmd="SnpEff  user 02_raw/variants/ERR180990.calls.norm.indels.vcf "
+##SnpEffVersion="5.1d (build 2022-04-19 15:49), by Pablo Cingolani"
+##fileDate=20230815
+##reference=/nexus/run17/ref_relative/ERR180990_A.fasta
+##source=lofreq call --force-overwrite --call-indels -f /nexus/run17/ref_relative/ERR180990_A.fasta --no-default-filter -r ERR180990:1-512 -o /tmp/lofreq2_call_parallel5UJ7Co/0.vcf.gz /nexus/run17/A_viterbi_sorted_indels.bam 
+##FILTER=<ID=PASS,Description="All filters passed">
+##FILTER=<ID=min_snvqual_20,Description="Minimum SNV Quality (Phred) 20">
+##FILTER=<ID=min_indelqual_20,Description="Minimum Indel Quality (Phred) 20">
+##FILTER=<ID=min_dp_10,Description="Minimum Coverage 10">
+##FILTER=<ID=sb_fdr,Description="Strand-Bias Multiple Testing Correction: fdr corr. pvalue > 0.001000">
+##FILTER=<ID=min_snvqual_64,Description="Minimum SNV Quality (Phred) 64">
+##FILTER=<ID=min_indelqual_49,Description="Minimum Indel Quality (Phred) 49">
+##FILTER=<ID=SnpGap,Description="SNP within 5 bp of an indel">
+##FILTER=<ID=IndelGap,Description="Indel within 5 bp of an indel">
+##INFO=<ID=DP,Number=1,Type=Integer,Description="Raw Depth">
+##INFO=<ID=AF,Number=1,Type=Float,Description="Allele Frequency">
+##INFO=<ID=SB,Number=1,Type=Integer,Description="Phred-scaled strand bias at this position">
+##INFO=<ID=DP4,Number=4,Type=Integer,Description="Counts for ref-forward bases, ref-reverse, alt-forward and alt-reverse bases">
+##INFO=<ID=INDEL,Number=0,Type=Flag,Description="Indicates that the variant is an INDEL.">
+##INFO=<ID=CONSVAR,Number=0,Type=Flag,Description="Indicates that the variant is a consensus variant (as opposed to a low frequency variant).">
+##INFO=<ID=HRUN,Number=1,Type=Integer,Description="Homopolymer length to the right of report indel position">
+##INFO=<ID=ANN,Number=.,Type=String,Description="Functional annotations: 'Allele | Annotation | Annotation_Impact | Gene_Name | Gene_ID | Feature_Type | Feature_ID | Transcript_BioType | Rank | HGVS.c | HGVS.p | cDNA.pos / cDNA.length | CDS.pos / CDS.length | AA.pos / AA.length | Distance | ERRORS / WARNINGS / INFO'">
+##INFO=<ID=LOF,Number=.,Type=String,Description="Predicted loss of function effects for this variant. Format: 'Gene_Name | Gene_ID | Number_of_transcripts_in_gene | Percent_of_transcripts_affected'">
+##INFO=<ID=NMD,Number=.,Type=String,Description="Predicted nonsense mediated decay effects for this variant. Format: 'Gene_Name | Gene_ID | Number_of_transcripts_in_gene | Percent_of_transcripts_affected'">
+##contig=<ID=ERR180990>
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO
+ERR180990	2824	ERR180990:2697_AC/A	AC	A	3422	PASS	DP=10448;AF=0.030054;SB=9;DP4=4722,5569,158,156;INDEL;HRUN=8;ANN=A|frameshift_variant|HIGH|Gene_1093_8091|Gene_1093_8091|transcript|unknown|protein_coding|1/1|c.1612delC|p.Arg538fs|1612/6999|1612/6999|538/2332||INFO_REALIGN_3_PRIME;LOF=(Gene_1093_8091|Gene_1093_8091|1|1.00)
+ERR180990	5772	ERR180990:5452_T/C	T	C	3442	PASS	DP=34080;AF=0.010974;SB=10;DP4=16533,17163,200,174;ANN=C|synonymous_variant|LOW|Gene_1093_8091|Gene_1093_8091|transcript|unknown|protein_coding|1/1|c.4359T>C|p.Gly1453Gly|4359/6999|4359/6999|1453/2332||
+ERR180990	6006	ERR180990:5686_A/T	A	T	3195	PASS	DP=29188;AF=0.010381;SB=0;DP4=14342,14512,150,153;ANN=T|synonymous_variant|LOW|Gene_1093_8091|Gene_1093_8091|transcript|unknown|protein_coding|1/1|c.4593A>T|p.Leu1531Leu|4593/6999|4593/6999|1531/2332||

@@ -18,6 +18,7 @@ VCFToDataFrame <- function(vcf_data) {
     DP = VariantAnnotation::info(vcf_data)$DP,
     AF = VariantAnnotation::info(vcf_data)$AF,
     INDEL = VariantAnnotation::info(vcf_data)$INDEL,
+    ALT= voRtex::extract_element_from_ANN(vcf_data,1),
     Annotation=voRtex::extract_element_from_ANN(vcf_data,2),
     Annotation_Impact=voRtex::extract_element_from_ANN(vcf_data,3)
   )} else{
