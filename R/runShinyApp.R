@@ -16,6 +16,6 @@
 runShinyApp <- function() {
 
   # find and launch the app
-  appDir <- system.file("myapp", "app.R", package = "voRtex")
+  appDir <- system.file("extdata","myapp", "app.R", package = "voRtex")
   shiny::runApp(appDir, display.mode = "normal")
 }

@@ -1,7 +1,7 @@
 library(shiny)
 library(ggplot2)
-#library(voRtex)
-#library(VariantAnnotation)
+library(voRtex)
+library(VariantAnnotation)
 library(DT)
 
 max_plots <- 50
