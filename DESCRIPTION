@@ -19,13 +19,14 @@ Imports:
     assertthat,
     BiocGenerics,
     Biostrings,
+    DT,
     IRanges,
     methods,
+    shiny,
     VariantAnnotation,
     XVector
 Suggests: 
     ape,
-    DT,
     ggplot2,
     kmer,
     ranger,

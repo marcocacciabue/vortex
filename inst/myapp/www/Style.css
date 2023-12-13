@@ -1,0 +1,71 @@
+:root{
+  /*Paleta de colores suaves*/
+  --c1:#2676b7;
+  --c2:#298dc0;
+  --c3:#5daed1;
+  --c4:#a5d7e2;
+  --c5:#d7ecea;
+}
+
+p {
+  font-weight: Arial, sans-serif;
+}
+.Titulo{
+  text-align: center;
+}
+
+#mi-div {
+  background-color: #298dc0;
+  color: white; /* Color del texto */
+  padding: 7px; /* Espaciado interno */
+  border: 1px solid #000; 
+  align-items: center;
+  display: flex;
+  justify-content: center; 
+}
+
+/* Estilo para el checkbox con el id "mi-checkbox" */
+
+.navbar-default{
+  background-color: #eee ;
+}
+
+#fullscreen-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+}
+
+#fullscreen-container img {
+  width: 100%;
+  height: 100%;
+}
+#text-container {
+  margin-top: 200px;
+  font-size: 16px; /* Ajusta el tamaño de fuente del texto según tus preferencias */
+}
+.container {
+  display: flex;
+}
+
+.column {
+  flex: 1;
+  padding: 5px;
+  text-align: center;
+  background-color: #a5d7e2;
+}
+.icon{
+  width: 220px;
+  height: 140px;
+}
+.icon2{
+  position: center;
+  width: 50px;
+  height: 50px;
+}
+
+
+
+
