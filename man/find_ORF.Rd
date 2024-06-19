@@ -5,12 +5,16 @@
 \title{find_ORF
 Finds the ATG initiation codon in FMDV genomes.}
 \usage{
-find_ORF(x, start_codon = "ATG")
+find_ORF(x, start_codon = "ATG", Filter_R = 900, Filter_L = 1200)
 }
 \arguments{
 \item{x}{DNAstringset with the relevant sequence}
 
 \item{start_codon}{Pattern string to search. Default ATG.}
+
+\item{Filter_R}{Numeric to filter position from the right.}
+
+\item{Filter_L}{Numeric to filter position from the left.}
 }
 \value{
 the position of the relevant codon

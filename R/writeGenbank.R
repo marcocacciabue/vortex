@@ -56,6 +56,8 @@ writeGenBank <- function(x,
 #' Finds the ATG initiation codon in FMDV genomes.
 #' @param x DNAstringset with the relevant sequence
 #' @param start_codon Pattern string to search. Default ATG.
+#' @param Filter_R Numeric to filter position from the right.
+#' @param Filter_L Numeric to filter position from the left.
 #'
 #' @return the position of the relevant codon
 #' @export
@@ -66,13 +68,15 @@ writeGenBank <- function(x,
 #' find_ORF(sequence_stringset)
 #'
 find_ORF<-function(x,
-                   start_codon="ATG"){
+                   start_codon="ATG",
+                   Filter_R=900,
+                   Filter_L=1200){
   # TODO add check for fasta format
   Codon_positions <- Biostrings::start(Biostrings::vmatchPattern("ATG", x))[[1]]
 
   #specific for FMDV to reduce number of possibile viable ORFs
-  Codon_positions <- Codon_positions[(Codon_positions > 900) &
-                                       (Codon_positions < 1200)]
+  Codon_positions <- Codon_positions[(Codon_positions > Filter_R) &
+                                       (Codon_positions < Filter_L)]
   #Previus method not always got the correct ORF
   #Now we calculate the STOP for each START and translate
   out<-vector()
