@@ -13,12 +13,18 @@
 VCFToDataFrame <- function(vcf_data) {
   objectControl(vcf_data)
   if ("ANN" %in% colnames(VariantAnnotation::info(vcf_data))){
+    ID<- rownames(info(vcf_data))
+    my_list<-strsplit(ID,split=":|_")
+    Position_original <- unlist(lapply(my_list, function(x) x[2]))
+    Ref_Alt <- unlist(lapply(my_list, function(x) x[3]))
   DataFrame <- data.frame(
     Position = Position(vcf_data),
+    Position_original = Position_original,
     DP = VariantAnnotation::info(vcf_data)$DP,
     AF = VariantAnnotation::info(vcf_data)$AF,
     INDEL = VariantAnnotation::info(vcf_data)$INDEL,
     ALT= voRtex::extract_element_from_ANN(vcf_data,1),
+    Ref_Alt= Ref_Alt,
     Annotation=voRtex::extract_element_from_ANN(vcf_data,2),
     Annotation_Impact=voRtex::extract_element_from_ANN(vcf_data,3)
   )} else{

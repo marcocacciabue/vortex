@@ -1,6 +1,6 @@
 Package: voRtex
 Title: voRtex
-Version: 0.0.5.9000
+Version: 0.0.6
 Authors@R: c(
     person("Marco", "Cacciabue", , "marcocacciabue@yahoo.com", role = c("aut", "cre"),
            comment = c(ORCID = "http://orcid.org/0000-0002-1429-4252")),
@@ -14,7 +14,7 @@ Description: A set of functions for processing VCF files in the context of
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 Imports: 
     assertthat,
     BiocGenerics,
