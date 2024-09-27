@@ -13,7 +13,7 @@
 VCFToDataFrame <- function(vcf_data) {
   objectControl(vcf_data)
   if ("ANN" %in% colnames(VariantAnnotation::info(vcf_data))){
-    ID<- rownames(info(vcf_data))
+    ID<- rownames(VariantAnnotation::info(vcf_data))
     my_list<-strsplit(ID,split=":|_")
     Position_original <- unlist(lapply(my_list, function(x) x[2]))
     Ref_Alt <- unlist(lapply(my_list, function(x) x[3]))
